@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6 的类语法
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        };
+        
+        Person.prototype.sayHi = function(){console.log('ni hao')};
+        //书写静态属性和方法
+        Person.a = 100;
+        Person.go = function(){console.log('gogogo')};
+
+        var p1 = new Person('jack',18);
+        p1.sayHi();
+        console.log(p1);
+        // var p1 =  Person('jack',18);
+        console.log(Person.a);
+        console.log(Person.go);
+
+        //ES6 类的书写
+        class Person2{
+            constructor(name,age){
+                //这里按照 ES5 的构造函数体书写
+                this.name = name;
+                this.age = age;
+            }
+            // 直接书写原型上的方法即可
+                sayHi2 (){console.log('你好 世界')};
+            //静态属性
+            static a = 100;
+            //静态方法
+            static go(){console.log('running')};
+
+        }
+        var p2 = new Person2('大哥',18)
+        console.log(p2)
+        console.log(p2.sayHi2())
+        console.log(Person2.a)
+    </script>
+</body>
+</html>

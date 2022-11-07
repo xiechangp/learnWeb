@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        总结：
+        
+                1.闭包要被函数嵌套
+                2.闭包可以访问所在的作用域
+                3.闭包能被外部作用域调用
+
+        父函数的每次调用，都会形成新的闭包，父函数中的变量会始终存在，在内存中，相当于缓存起来了
+        
+        */
+       let c=40
+        function fn1(){
+            let b=20;
+            function fn2(){
+                // let c = 30;
+                console.log(c,b);
+            }
+            return fn2;
+        }
+        //  console.log(fn1());
+        let result=fn1();
+        result();
+
+
+       /*  let age = 20
+        function fn1(){
+            age = 40;
+        }
+        function fn2(){
+            console.log(age);
+        }
+        fn1();
+        fn2() */
+    </script>
+</body>
+</html>

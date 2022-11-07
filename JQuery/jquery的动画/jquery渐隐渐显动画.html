@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button>fadeIn</button>
+    <button>fadeOut</button>
+    <button>fadeToggle</button>
+    <button>fadeTo</button>
+    <div></div>
+    <script>
+        // 1. fadeIn() 显示  2. fadeOut()隐藏 3. fadeToggle切换
+        // 三者参数类型一样 show(时间,曲线,回调函数)
+        // fadeTo(运动时间,指定的透明度,运动曲线,运动结束)
+        $('button:nth-child(1)').click(function(){
+            // 执行 show 动画函数
+            $('div').fadeIn(1000,'linear',function(){console.log('show触发')})
+        })
+        $('button:nth-child(2)').click(function(){
+            // 执行 show 动画函数
+            $('div').fadeOut(1000)
+        })
+        $('button:nth-child(3)').click(function(){
+            // 执行 show 动画函数
+            $('div').fadeToggle(1000)
+        })
+        $('button:nth-child(4)').click(function(){
+            // 执行 show 动画函数
+            $('div').fadeTo(1000,0.2,'linear',function(){console.log('运动到了指定的透明度')})
+        })
+    </script>
+</body>
+</html>

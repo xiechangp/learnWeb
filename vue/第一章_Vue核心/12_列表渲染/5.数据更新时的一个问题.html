@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <ul>
+            <button @click="updateYu">点击更新第一个人的信息</button>
+            <li v-for="item in persons" :key="item.id">{{item.name}}-{{item.age}}-{{item.sex}}</li>
+        </ul>
+    </div>
+
+    <script>
+      let vm =  new Vue({
+            el: "#root",
+            data() {
+                return {
+                    persons: [{
+                            id: "001",
+                            name: "周冬雨",
+                            age: 31,
+                            sex: "女"
+                        },
+                        {
+                            id: "002",
+                            name: "马冬梅",
+                            age: 20,
+                            sex: "女"
+                        },
+                        {
+                            id: "003",
+                            name: "周杰伦",
+                            age: 29,
+                            sex: "男"
+                        },
+                        {
+                            id: "004",
+                            name: "温兆伦",
+                            age: 27,
+                            sex: "男"
+                        },
+
+                    ]
+                }
+            },
+            methods: {
+                updateYu(){
+                    // 不奏效
+                    // this.persons[0] = {
+                    //         id: "001",
+                    //         name: "周冬东",
+                    //         age: 31,
+                    //         sex: "男"
+                    //     }
+                    this.persons.splice(0,1,{
+                            id: "006",
+                            name: "周冬东",
+                            age: 31,
+                            sex: "男"
+                        })
+                }
+            },
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* margin 8 */
+        .grandfather{/* 35 */
+            border: 5px solid red;
+            padding: 0px 30px 30px 30px;
+            position:absolute; 
+           /*  box-sizing: border-box; */
+        }
+        .father{/* 21 */
+            padding: 20px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .son{/* 10 */
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: red;
+         /*    padding: 20px;
+            box-sizing: border-box; */
+        }
+    </style>
+</head>
+<body>
+    <div class="grandfather">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+    <script>
+        let son = document.querySelector('.son');
+        // 1.获取当前元素的左偏移量
+        // let actualLeft = son.offsetLeft;
+        // // 2.获取当前元素的父级定位
+        // let parent = son.offsetParent;
+        // // console.log(parent);
+        // console.log(parent.clientLeft);/* 边框值 */
+        // console.log(parent.offsetLeft);
+        // console.log(parent.offsetParent);
+        // // 3.循环
+        // while (parent !== null) {
+        //     // 3.1 求出当前的左方偏移量
+        //     console.log(parent);
+        //     actualLeft = actualLeft + parent.clientLeft + parent.offsetLeft;
+        //     // console.log(actualLeft);
+        //     parent = parent.offsetParent;
+        //     // console.log(parent.offsetLeft);
+        // }
+        // console.log(actualLeft);
+            // 封装元素距离页面的偏移量
+        function getElementLeft(_left){
+            let actualLeft = _left.offsetLeft;
+            let parent = _left.offsetParent;
+            while(parent !== null){
+                actualLeft = actualLeft + parent.clientLeft + parent.offsetLeft;
+                parent = parent.offsetParent;
+            }
+            console.log(`所求页面到该元素的左侧偏移量是：`+actualLeft);
+        }
+        getElementLeft(son);
+        function getElementTop(_top){
+            let actualLeft = _top.offsetTop;
+            let parent = _top.offsetParent;
+            while(parent !== null){
+                actualLeft = actualLeft + parent.clientTop + parent.offsetTop;
+                parent = parent.offsetParent;
+            }
+            console.log(`所求页面到该元素的上方偏移量是：`+actualLeft);
+        }
+        getElementTop(son);
+    </script>
+</body>
+</html>

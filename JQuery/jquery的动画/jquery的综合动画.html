@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <button>开始 动画</button>
+    <div></div>
+    <script>
+        /*
+            综合动画
+
+            animate()
+                - 第一个参数：要运动的样式，以一个对象数据类型传递
+                - 第二个参数：运动时间
+                - 第三个参数：运动曲线
+                - 第四个参数：运动结束回调函数
+
+                !!! 
+                颜色 相关的样式不能运动
+                transform 相关的样式不能运动
+        */
+       $('button').click(function(){
+           // animate() 实现动画
+           $('div').animate({
+            width: 500,
+            height: 500
+           },1000,'linear',function(){console.log('运动完了')})
+       })
+    </script>
+</body>
+</html>

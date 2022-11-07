@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(143, 214, 20);
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // 坐标位置
+        // clientX/Y,x/y,offsetX/Y,screenX/Y,pageX/pageY
+        let box = document.querySelector('#box');
+        box.onmousemove = function(e){
+            // clientX/Y和x/y：相对于浏览器的X轴和Y轴的距离
+            // this.innerHTML =  `clientX:${e.clientX};clientY:${e.clientY};x:${e.x};y:${e.y}`;
+            // screen是相对于显示器的距离
+            // this.innerHTML = `screenX:${e.screenX};screenY:${e.screenY}`;
+            // page相对于页面
+            // this.innerHTML = `pageX:${e.pageX};pageY:${e.pageY}`;
+            // offset 相对于事件源的距离
+            this.innerHTML = `offsetX:${e.offsetX};offsetY:${e.offsetY};`;
+            
+
+        }
+    </script>
+</body>
+</html>

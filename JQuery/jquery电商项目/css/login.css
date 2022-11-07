@@ -1,0 +1,22 @@
+
+p > a{
+    text-decoration: none;
+}
+form{
+    width: 400px;
+    border: 2px solid pink;
+    margin: 30px auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+form>span {
+    position: absolute;
+    left: -81px;
+    transform: translateX(50%);
+    top: 15px;
+    font-size: 20px;
+    color: red;
+    display: none;
+}

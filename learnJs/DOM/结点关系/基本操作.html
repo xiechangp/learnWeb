@@ -1,0 +1,19 @@
+<!-- <div id="app">
+    <div class="houdunren" data="hd">houdunren.com</div>
+    <div class="houdunwang">houdunwang.com</div>
+    <div class="xiangjun">向军大叔</div>
+  </div>
+  <script>
+    const node = app.querySelector(`.houdunwang`)
+    console.log(node.parentNode) //div#app
+    console.log(node.childNodes) //文本节点
+    console.log(node.nextSibling) //下一个兄弟节点是文本节点
+    console.log(node.previousSibling) //上一个节点也是文本节点
+  </script> -->
+  <div id="app" content="后盾人" color="red">houdunwang.com</div>
+<script>
+  const app = document.querySelector('#app')
+  for (const { name, value } of app.attributes) {
+    console.log(name, value)
+  }
+</script>

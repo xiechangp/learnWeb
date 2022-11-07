@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+
+<body>
+
+    <!-- 
+        1.一个重要的内置关系：VueComponent.prototype.proto === Vue.prototype
+        2.为什么要有这个关系：让组件实买例对象(vc)可以访阿到Vue原型上的属性、万法。
+     -->
+
+    <div id="root">
+        <school></school>
+    </div>
+
+</body>
+<script>
+    // 定义一个 shcool 组件
+    const school = Vue.extend({
+        template:`
+            <div>
+            <h1>学校名称:{{name}}</h1>
+            <h1>学校地址:{{address}}</h1>
+            <button @click="getX">获取Vue.prototype上的x的值</button>
+        </div>
+        `,
+        data() {
+            return {
+                name:"河池学院",
+                address:"河池"
+            }
+        },
+        methods:{
+            getX(){
+                alert(school.prototype.x);
+                console.log(this.x);
+            }
+        }
+    })
+
+
+    const vm = new Vue({
+        el: "#root",
+        data() {
+            return {
+
+            }
+        },
+        components:{
+            school
+        }
+    })
+    vm.__proto__.x = 99;
+</script>
+
+</html>

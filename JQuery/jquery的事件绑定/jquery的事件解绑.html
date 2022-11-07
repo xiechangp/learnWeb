@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+            margin: 50px;
+            overflow: hidden;
+        }
+        p{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p></p>
+    </div>
+
+    <script>
+        $('div').on({
+            click:function (){console.log('点击事件')},
+            // mouseover:function (){console.log('鼠标移入事件')},
+            mouseout:function (){console.log('鼠标移出事件')}
+        })
+        function go(){console.log('go鼠标移入事件')};
+        function goo(){console.log('goo鼠标移入事件')};
+        // function gooo(){console.log('gooo鼠标移入事件')};
+        $('div').mouseenter(go);
+        $('div').mouseenter(goo);
+        // $('div').mouseenter(goo);
+        // 1. off() 事件解绑
+        // 1-1 解绑所有事件函数
+        // $('div').off();
+        // 1-2 解绑指定的事件处理函数 元素集合.off(事件类型，要解绑的事件处理函数)
+        $('div').off('mouseenter',go);
+
+    </script>
+
+</body>
+</html>

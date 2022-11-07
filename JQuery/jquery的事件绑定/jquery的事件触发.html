@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        div{
+            height: 400px;
+            width: 400px;
+            /* background-color: aquamarine; */
+        }
+        .a{
+            background-color: rgb(98, 27, 196);
+        }
+        .b{
+            background-color: rgb(19, 210, 19);
+        }
+    </style>
+</head>
+<body>
+    <div class="a b"></div>
+    <button>切换</button>
+    <script>
+        // 1. trigger()事件触发 元素集合.trigger(事件类型)
+
+        // $('button').click(function(){
+        //     $('div').toggleClass('b')
+        // })
+
+        // setInterval 定时器 1000ms == 1s 触发一次 button click操作
+        setInterval(function(){
+            // $('div').toggleClass('b');
+            $('button').trigger('click');
+        },1000);
+    </script>
+</body>
+</html>

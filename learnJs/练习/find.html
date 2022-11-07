@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* let lessons = [{name:'jack'},{name:'tom'}];
+        let status = lessons.find(item=>{
+           return item.name == 'jack';
+        });
+        console.log(status);
+ 
+        let lessonss = [{name:'jack'},{name:'tom'}];
+        let statuss = lessons.findIndex(item=>{
+           return item.name == 'jack';
+        });
+        console.log(statuss); */
+
+        function find2(array,callback){
+            for(const value of array){
+                // console.log(value);
+                if(callback(value)){
+                    return value;
+                }
+               
+            }
+            return false;
+        }
+        let arr = [1,2,3,4];
+        console.log(
+            find2(arr,function(item){
+                return item == 3;
+            })
+        );
+    </script>
+</body>
+</html>

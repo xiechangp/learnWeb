@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div>
+        hello
+        <p>你好 世界</p>
+        world
+    </div>
+    <input type="text" value="hello">
+    <script>
+        // 1. html() 等价于原生 JS 中的 innerHTML
+        // 1-1 html() 获取
+        // console.log($('div').html())
+        // 2. html() 设置 语法：元素集合.html(设置的内容)
+        // console.log($('div').html('<h1>改变</h1>'))
+
+        // 2. text() 等价于原生 JS 中的 innerText
+        // 2-1 text() 获取
+        console.log($('div').text())
+        // 2-2 text() 设置 语法：元素集合.text(设置的内容)
+        console.log($('div p').text('886'));
+
+        // 3. val()  等价于原生 JS 中的 value
+        // 3-1 val() 获取
+        console.log($('input').val())
+        //3-2 val() 设置
+        $('input').val('后来设置的')
+    </script>
+</body>
+</html>

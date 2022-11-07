@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../JQuery/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <script>
+
+     /*    $('form').on('submit',function(){
+         //  阻止默认行为
+        //  e.preventDefault();
+     
+         let input = $('input').val();
+         console.log(input);
+        }) */
+         
+         
+         // 弹框方法
+         let random = Math.random()*100+1;
+         const random2= Math.trunc(random);
+         // console.log(random2);
+         
+         while(true){
+             let n = prompt("猜猜随机数");
+             if(n > random2){
+                 alert('你猜的大了');
+                 continue;
+             }
+             else if(n<random2){
+                 alert('你猜的小了')
+                 continue
+             }else if(n == random2){
+                 alert('恭喜你猜对了');
+                 break;
+             }
+             else{
+                 alert('猜1-100的数字，你猜哪里去了');
+                 continue;
+             }
+         }
+     </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>我是 div 内本身的 p标签</p>
+        <span>我是 div 内本身的 span标签</span>
+    </div>
+    <!-- 删除结点的第一种语法 -->
+    <script>
+        //获取到 div 元素
+        var div = document.querySelector('div');
+        //获取到 p 元素
+        var p = document.querySelector('p');
+        //从 div 内删除 p 元素
+        div.removeChild(p); 
+    </script>
+    <!-- 删除结点的第二种语法 -->
+    <script>
+        //获取到 div 元素
+        var div = document.querySelector('div');
+        // 删除 div
+        div.remove();
+    </script>
+</body>
+</html>

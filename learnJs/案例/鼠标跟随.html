@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 50px;
+            height: 50px;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="/images/dog.jpg" alt="">
+
+    <script>
+        var imgBox = document.querySelector('img');
+
+        //给 document 绑定一个鼠标移动事件
+        document.onmousemove = function(e){
+            // console.log(e);
+            //拿到光标相对与窗口的坐标点位
+            var x = e.clientX;
+            var y = e.clientY;
+
+            // 把 X 和 Y 的值赋值给 img 标签的 left 和 top 样式
+            imgBox.style.left = x + 'px';
+            imgBox.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>

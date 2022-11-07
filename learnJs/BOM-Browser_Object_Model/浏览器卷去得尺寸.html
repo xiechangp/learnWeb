@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 3000px;
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //滚动条位置变化
+        window.onscroll = function(){
+            //兼容得写法
+            var height = document.documentElement.scrollTop || docment.body.scrollTop;
+            console.log(height);
+        }
+        window.onscroll = function(){
+            //兼容得写法
+            var width = document.documentElement.scrollLeft || docment.body.scrollLeft;
+            console.log(width);
+        }
+    </script>
+</body>
+</html>

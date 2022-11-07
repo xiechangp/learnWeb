@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>我是 div 内本身的 p标签</p>
+    </div>
+    <script>
+        //创建一个 span 标签
+        var span = document.createElement('span');
+        // 向 span 内添加一些文本内容
+        span.innerText = '我是创建出来的 span 标签';
+        //输出以下
+        console.log(span)
+        //获取到页面上的 div 元素
+        var div = document.querySelector('div');
+            // 把创建的 span 标签插入到 div 内部
+            // div.appendChild(span);
+        //获取到 div 内部本身的 p 标签
+        var p = document.querySelector('p');
+        // 把创建的 span 标签插入到 div 内部，并且放在 p 标签的前面
+        div.insertBefore(span,p)
+
+    </script>
+</body>
+</html>

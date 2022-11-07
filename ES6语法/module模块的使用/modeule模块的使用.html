@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import Person,{name,sayHi,sayName} from '../modules/index.js';
+        // console.log(name,sayHi(),sayName());
+        // console.log(obj);
+
+        import * as modeule from '../modules/index.js';
+        console.log(modeule);
+        // console.log(modeule.default);
+        let Jack = new modeule.default("Jack",18);
+        console.log(Jack.getName());
+    </script>
+</body>
+</html>

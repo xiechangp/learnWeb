@@ -1,0 +1,35 @@
+.content{
+    width: 1200px;
+    /* height: 500px; */
+    margin: 20px auto;
+    border: 1px solid red;
+    display: flex;
+}
+.content > .show{
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ccc;
+    margin-right: 10px; 
+}
+.content > .info{
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.content>.info>.title{
+    font-size: 24px;
+    font-weight: 700;
+}
+.content>.info>.price{
+    color: red;
+    font-size: 30px;
+}
+.content>.info>button{
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,1,2,3];
+        arr=[... new Set(arr)];
+        console.log(arr)
+        console.log('```````````````````````````');
+        //遍历Set
+        let set = new Set(['a','b','c']);
+        set.forEach((element,index,set) => {
+            console.log(set)
+        });
+        console.log('```````````````````````````');
+        for (const iterator of set) {
+            console.log(iterator);
+        }
+    </script>
+</body>
+</html>

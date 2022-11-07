@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name:'jack',
+            age:28,
+            hobby:['eat','play'],
+            friends:{
+                name:'Tom',
+                friends:{
+                    name:'Tony',
+                    friends:{
+                        name:'nick'
+                    }
+                }
+            }
+        }
+        function deeCopy(to,form){
+            for (const key in form) {
+                if (form.hasOwnProperty(key)) {
+                    /* console.log(form[key]); */
+                    //如果值是对象，就进行遍历
+                    if(form[key] && typeof form[key] === 'object'){
+                        //区分是一般对象还是数组
+                        to[key] = form[key].constructor === Array ?[]:{};
+                        // console.log(to[key]);
+                        to[key] = deeCopy(to[key],form[key]);
+                    }else{
+                        to[key]=form[key];
+                    }
+                }
+            }
+            return to;
+        }
+        let newObj = deeCopy({},obj);
+        console.log(newObj);
+        newObj.hobby.push('push');
+        // newObj.friends = '大哥'
+        console.log(obj);
+    </script>
+</body>
+</html>

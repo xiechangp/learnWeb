@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* function User() {
+        
+        }
+        console.dir(User);
+        let jack = {};
+        console.dir(jack) */
+        // function User(){ }
+        // User.__proto__.view = function(){console.log('User __proto__ view()')}
+        // console.dir(User);
+        // User.prototype.show = ()=>console.log('User Perototype show()')
+        // User.view();
+        // User.prototype.show();
+        // let user = new User();
+        // console.dir(user);
+        // user.view();
+        // user.show();
+        function User(){}
+        let object = new Object();
+        object.__proto__.show = ()=>console.log('object __proto__ show()');
+        console.dir(User)
+        console.dir(object);
+        User.show()
+        let user = new User();
+        user.show();
+        console.log(object.__proto__.__proto__)
+        console.dir(Object);
+    </script>
+</body>
+</html>

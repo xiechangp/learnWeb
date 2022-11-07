@@ -1,0 +1,29 @@
+#father{
+    width: 900px;
+    height: 900px; 
+    border: 1px solid; 
+}
+div{
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+}
+.layer01{
+    border: 1px #000 solid;
+    float: right;
+}
+.layer02{
+    border: 1px #F00 dashed;
+}
+.layer03{
+    border: 1px #00F dashed;
+    float: left;
+    clear: both;
+}
+.layer04{
+    border: 1px #060 dashed;
+    font-size: 12px;
+    line-height: 23px;
+    float:left;
+    clear: both;
+}

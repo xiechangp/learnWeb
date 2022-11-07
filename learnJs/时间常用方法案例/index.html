@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 时间差 -->
+    <script>
+        //时间结点
+        var time1 = new Date(2022,1,23,11,22,18);
+        var time2 = new Date(2022,1,25,1,22,18);
+        //准备一个函数，接收连个参数
+        function getDiff(time1,time2){
+            //获取到两个时间结点的时间戳
+            var ms1 = time1.getTime();
+            var ms2 = time2.getTime();
+            //两个时间戳相减得到相差得秒数
+            var sub = Math.ceil((ms2 - ms1)/1000);
+            //开始换算
+            var day = Math.floor(sub/(60*60*24));
+            var hours = Math.floor(sub % (60*60*24)/(60*60));
+            var minutes = Math.floor(sub % (60*60)/60);
+            var seconds = sub % 60;
+            return {day:day,hours:hours,minutes: minutes,seconds: seconds};
+        }
+        var res = getDiff(time1,time2);
+        console.log(res);
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form表单</title>
+</head>
+<body>
+    <h1>文本域密码段 type：text、password</h1>
+    <form action="">
+        <!-- Username: <input type="text" name="username"><br>
+        Password: <input type="password" name="pw"> -->
+        Username: <input type="text" name="username"><br>
+        Password: <input type="password" name="pw">
+    </form>
+    <hr>
+    <h1>单选按钮（Radio Buttons）</h1>
+    <form action="">
+        <!-- <input type="radio" name="sex" value="male" id="">Male <br>
+        <input type="radio" name="sex" value="female">Female -->
+        <input type="radio" name="sex" value="girl">Girl <br>
+        <input type="radio" name="sex" value="boy" id="">Boy
+    </form>
+    <hr>
+    <h1>复选框（ChEckboxes）</h1>
+    <form action="">
+        <!-- <input type="checkbox" name="vehicle" value="Bike">I have a bike <br>
+        <input type="checkbox" name="vehicle" value="Car">I have a car -->
+        <input type="checkbox" name="like" value="basketball"id="">篮球 <br>
+        <input type="checkbox" name="like" value="football" id="">足球
+    </form>
+    <hr>
+    <h1>提交按钮（Submit Buttons）</h1>
+    <form name="input"action="div布局.html" method="get">
+        <!-- Username:<input type="text" name="user"value="">
+        <input type="submit" value="Submit"> -->
+        Username: <input type="text" name="user">
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <h1>下拉列表</h1>
+    <form action="">
+        <select name="cars" id="">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+    </form>
+    <hr>
+    <h1>有预选值的下拉列表</h1>
+    <form action="">
+        <select name="cars" id="">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi" selected>Audi</option>
+        </select>
+    </form>
+    <hr>
+    <h1>文本域</h1>
+    <textarea name="" id="" cols="30" rows="10">
+        不限制输入的文本域
+    </textarea>
+    <hr>
+    <h1>按钮</h1>
+    <form action="">
+        <input type="button" value="按钮">
+    </form>
+    <hr>
+    <h1>带边框的表单（本例演示如何在数据周围绘制一个带标题的框。）</h1>
+    <form action="">
+        <fieldset style="width: 350px;height: 100px;">
+            <legend>Personal information:</legend>
+            Name: <input type="text" name="name" id="" size="20"><br>
+            E-mail: <input type="text" name="E-mail" id="" size="20"><br>
+            Date of birth: <input type="text" name="birthday" id="" size="10">
+        </fieldset>
+    </form>
+    <hr>
+    <h1>带有输入框与按钮的表单（本例演示如何向页面添加表单。此表单包含两个输入框和一个确认按钮。）</h1>
+    <form action="demo_form.html">
+        Username: <input type="text" name="username" id=""><br>
+        Password: <input type="password" name="pw"><br>
+        <input type="submit" value="提交">
+    </form>
+    <hr>
+    <h1>带有复选框的表单（此表单包含两个复选框和一个确认按钮。）</h1>
+    <form action="demo_form.html" method="get">
+        <input type="checkbox" name="ball[]" value="basketball" id="" checked>篮球 <br>
+        <input type="checkbox" name="ball[]" value="football" id="">足球<br>
+        <input type="submit" value="确认">
+    </form>
+    <hr>
+    <h1>带有单选框的表单（此表单包含两个单选框和一个确认按钮）</h1>
+    <form action="demo_form.html" method="get">
+        <input type="radio" name="sex" value="Male">Male <br>
+        <input type="radio" name="sex" value="Female" checked>Female <br>
+        <input type="submit" value="确认">
+    </form>
+    <hr>
+    <h1>从表单发送电子邮件（此例演示如何从表单发送电子邮件。）</h1>
+    <form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+        Name: <input type="text" name="name" value="your name"><br>
+        E-mail: <input type="text" name="E-mail" value="your E-mail"><br>
+        <input type="submit" value="发送">
+        <input type="reset" value="重置">
+    </form>
+</body>
+</html>

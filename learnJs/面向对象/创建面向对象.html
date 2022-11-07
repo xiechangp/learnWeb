@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function Person(name,age){
+            // 向实例对象上添加属性
+            this.name = name;
+            this.age = age;        
+            //向实例对象上添加方法
+            // this.sayHi = function(){
+            //     console.log('hello world');
+            // }    
+        }
+        // 把想添加给实例对象的方法,书写原型上
+        Person.prototype.sayHi = function(){console.log('hello world');}
+
+        // 创建实例对象
+        var p1 = new Person('Jack',18);
+        var p2 = new Person('Rose',23);
+        console.log(p1)
+        console.log(p2)
+        console.log(p1.__proto__ === Person.prototype);
+
+        console.log(p1.sayHi);
+        console.log(p2.sayHi);
+    </script>
+</body>
+</html>

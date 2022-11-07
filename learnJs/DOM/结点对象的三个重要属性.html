@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">我是div<!-- 注释 --></div>
+    <script>
+        /* nodeName nodeValue nondeType */
+        // 1. 元素节点
+        let nodediv = document.querySelector('div');
+        console.log(nodediv.nodeName+' | '+nodediv.nodeValue+' | '+nodediv.nodeType);
+        // 2. 获取属性节点
+        let attrnode = nodediv.attributes[0];
+        console.log(attrnode.nodeName+' | '+attrnode.nodeValue+' | '+attrnode.nodeType);
+        // 3. 获取文本节点
+        let textnode = nodediv.childNodes[0];
+        console.log(textnode.nodeName+' | '+textnode.nodeValue+' | '+textnode.nodeType);
+        // 4 获取注释
+        let commentNode = nodediv.childNodes[1];
+        console.log(commentNode.nodeName+' | '+commentNode.nodeValue+' | '+commentNode.nodeType);
+        // 5 获取
+        console.log(document.nodeType);
+    </script>
+</body>
+</html>

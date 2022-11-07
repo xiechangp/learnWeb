@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .disabled{
+            color: #ccc;
+            
+        }
+        li{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>javaScript</li>
+        <li>css</li>
+    </ul>
+    <script>
+        let li = document.querySelectorAll('ul li');
+        li.forEach(function(item){
+            item.addEventListener('click',function(){
+                this.classList.toggle('disabled');
+            })
+        })
+
+    </script>
+</body>
+</html>

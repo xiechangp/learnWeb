@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>原生属性</button>
+    <div id="box">div 标签</div>
+    <input type="password">
+    <script>
+        //获取元素
+        var box = document.querySelector('div');
+        var inp = document.querySelector('input');
+        var btn = document.querySelector('button');
+        //绑定点击事件
+        btn.onclick = function(){
+            //修改元素属性
+            box.id = 'content';
+            inp.type = 'checkbox';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            font-size: 20px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <button>操作属性</button>
+    <div>你好</div>
+    <script>
+        //获取元素
+        var box = document.querySelector('div')
+        var btn = document.querySelector('button')
+        //获取非行内样式
+        console.log(window.getComputedStyle(box).width);
+        //给 按钮 绑定一个点击事件333
+    </script>
+</body>
+</html>

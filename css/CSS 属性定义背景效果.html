@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 属性定义背景效果</title>
+    <style>
+        h1{
+            background-color: #6495ed;
+        }
+        p{
+            background-color: #e0ffff;
+        }
+        div{
+            background-color: #b0c4de;
+        }
+        /* background-image 属性描述了元素的背景图像. */
+        /* body{
+            background-image: url('http://static.runoob.com/images/mix/paper.gif');
+            background-color: #cccccc;
+        } */
+        /* 背景图像 - 水平或垂直平铺
+        默认情况下 background-image 属性会在页面的水平或者垂直方向平铺。 */
+        /* body{
+            background-image: url('../img/dog.jpg');
+	        background-repeat:repeat-x;  
+        } */
+        /* 背景图像- 设置定位与不平铺
+        Remark 让背景图像不影响文本的排版 */
+        /* body{
+            background-image: url('../img/dog.jpg');
+	        background-repeat:no-repeat;  
+            background-position: right top;
+            margin-right: 200px;
+        } */
+        /* 背景-简写属性 */
+        /*  当使用简写属性时，属性值的顺序为：:
+        background-color
+        background-image
+        background-repeat
+        background-attachment 
+        background-position */
+        body{
+            background:#ffffff url('http://static.runoob.com/images/mix/img_tree.png') no-repeat right top;
+            margin-right: 200px;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS background-color </h1>
+    <div>
+        该文本插入在div元素中
+        <p>该段落有自己的背景颜色。</p>
+        我们仍然在同一个div中
+    </div>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+    <p>背景图片是固定的。尝试向下滚动页面。</p>
+</body>
+</html>
+CSS背景属性：
+background 简写属性，作用是将背景属性设置在一个生命中。
+background-attachment 背景图像是否固定或者随着页面的其余部分滚动
+background-color 设置元素的背景颜色
+background-image 把图像设置为背景
+background-position 设置背景图像的起始位置
+background-repeat 设置背景图像是否及如何重复

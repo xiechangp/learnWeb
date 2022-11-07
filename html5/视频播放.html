@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my girlfriend</title>
+    <link rel="icon" href="img/dog.jpg">
+</head>
+
+<body>
+    <div>
+        <div style="text-align: center;">
+            <h2>my love</h2>
+            <video width="320" height="240" controls>
+                <source src="video/tjs.mp4" type="video/mp4">
+                <!-- <source src="video/tjs.ogg" type="video.ogg"> -->
+                你的浏览器不支持 video 标签。
+            </video>
+        </div>
+        <hr>
+        <div style="text-align: center;">
+            <button onclick="playPause()">播放/暂停</button>
+            <button onclick="makeBig()">放大</button>
+            <button onclick="makeSmall()">放小</button>
+            <button onclick="makeNormal()">普通</button><br>
+            <video id="video1" width="420">
+                <source src="video/tjs.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var myVideo=document.getElementById("video1");
+
+    function playPause(){
+        if(myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+    function makeBig(){
+        myVideo.width=560;
+    }
+    function makeSmall(){
+        myVideo.width=320;
+    }
+    function makeNormal(){
+        myVideo.width=420;
+    }
+</script>

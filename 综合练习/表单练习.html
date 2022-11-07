@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            width: 350px;
+            background-color: #9CBC2B;
+            margin: 20px auto;
+            padding: 0px 15px 10px 15px;
+            color: #364411;
+            border-radius: 5px;
+        }
+        .step{
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        /* .step .step1{
+            margin: 100px;
+        } */
+        
+        .form-line{
+            border-radius: 5px;
+            border: 2px solid #F0F5DF;
+            padding: 3px;
+            margin: 3px 0;
+            background-color: #CEDE95;
+            font-size: 12px;
+            padding-left: 10px;
+            
+        }
+        .form-line span{
+            display: inline-block;
+            width: 110px;
+        }
+        .form-line input{
+            background: white;
+            border: none;
+            height: 20px;
+            border-radius: 3px;
+            width: 180px;
+        }
+        .form-line input[type=radio]{
+            width: 25px;
+            height: 12px;
+        }
+        .form-line textarea{
+            width: 180px;
+            height: 70px;
+            vertical-align: top;
+            border: none;
+            border-radius: 3px;
+            resize: none;
+        }
+        input.submit-btn{ 
+            border: none;
+            background-color: #374313;
+            color: white;
+            display: block;
+            width: 100px;
+            padding: 5px 0;
+            border-radius: 20px;
+            margin: 10px auto 0px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <section>
+            <p class="step">Step1：Detalils</p>
+            <p class="form-line">
+                <span>Name</span>
+                <input type="text" placeholder="First and last name">
+            </p>
+            <p class="form-line">
+                <span>Email</span>
+                <input type="email" placeholder="example@domain.com">
+            </p>
+            <p class="form-line">
+                <span>Phone</span>
+                <input type="number" placeholder="Eg.+44750000000">
+            </p>
+            <p class="form-line">
+                <span>facebook page</span>
+                <input type="url" >
+            </p>
+        </section>
+        <section>
+            <p class="step">Step2：Detalils address</p>
+            <p class="form-line">
+                <span>Address</span>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </p>
+            <p class="form-line">
+                <span>Post code</span>
+                <input type="email">
+            </p>
+        </section>
+        <section>
+            <p class="step">Step3：Card details</p>
+            <p class="form-line">
+                <span>Name</span>
+                <input type="radio" >credit
+                <input type="radio" >debit
+                <input type="radio" >VISA
+            </p>
+            <p class="form-line">
+                <span>Card number</span>
+                <input type="text" >
+            </p>
+            <p class="form-line">
+                <span>Card pwd</span>
+                <input type="password" placeholder="this is not required">
+            </p>
+            <p class="form-line">
+                <span>Name on card</span>
+                <input type="text" >
+            </p>
+        </section>
+        <p>
+            <input type="submit" value="提交" class="submit-btn">
+        </p>
+    </form>
+</body>
+</html>

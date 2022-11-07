@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text(文本)</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        p.date{text-align: right;}
+        p.main{text-align: justify;}
+        a{text-decoration:none}
+        p.uppercase{text-transform: uppercase;}/*  转为大写*/
+        p.lowercase{text-transform: lowercase;}/*  转为小写*/
+        p.capitalize{text-transform: capitalize;}/* 首字母大写 */
+        p.text_indent{text-indent: 50px;}
+        h2{letter-spacing:2px;} /* 指定字符之间的空间 */
+        h3{letter-spacing:-2px;}/*  */
+        p.small{line-height: 70%;}/*指定行与行之间的空间  */
+        p.big{line-height:200%;}/*  */
+        div.ex1{direction:rtl;}/* 设置文本方向 */
+        p.word{
+            word-spacing: 30px;
+        }
+        p.white_space{white-space: nowrap;/* 禁用文字环绕 */}
+        img.top{vertical-align: text-top;}/* 对齐头部 */
+        img.bottom{vertical-align: text-bottom;}/* 对齐底部 */
+        h1.text_shadow{text-shadow:2px 2px #FF0000}
+    </style>
+</head>
+<body>
+    <h1>文本对齐方式</h1>
+    <div style="width: 600px; height: 300px;">
+    <h1>CSS text-align实例</h1>
+    <p class="date">2022年4月6日</p>
+    <p class="main">“当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，
+        我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，
+        我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，
+        但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：
+        如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；
+        在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这
+        个世界。”</p>
+    </div>
+    <br>
+    <h1>删除链接的下划线</h1>
+    <p>链接到：<a href="http://www.runoob.com">菜鸟</a></p>
+    <hr><!--  -->
+    <h1>文本转换</h1>
+    <p class="uppercase">This is some text.</p>
+    <p class="lowercase">This is some text.</p>
+    <p class="capitalize">This is some text.</p>
+    <hr>
+    <h1>文本缩进</h1>
+    <p class="text_indent">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'</p>
+    <hr>
+    <h1>指定字符之间的空间</h1>
+    <p>这个例子演示了如何增加或减少字符之间的空间。</p>
+    <h2>This is heading 1</h2>
+    <h3>This is heading 2</h3>
+    <hr>
+    <h1>指定行与行之间的空间</h1>
+    <p>这个例子演示了如何指定在一个段落中行之间的空间</p>
+    <p>
+        这是一个标准行高的段落。<br>
+        这是一个标准行高的段落。<br>
+        大多数浏览器的默认行高约为110%至120%。<br>
+        </p>
+        <p class="small">
+        这是一个更小行高的段落。<br>
+        这是一个更小行高的段落。<br>
+        这是一个更小行高的段落。<br>
+        这是一个更小行高的段落。<br>
+        </p>
+        <p class="big">
+        这是一个更大行高的段落。<br>
+        这是一个更大行高的段落。<br>
+        这是一个更大行高的段落。<br>
+        这是一个更大行高的段落。<br>
+        </p>
+    <hr>
+    <h1>设置元素的文本方向 </h1>
+    <p>这个例子演示了如何改变元素的文本方向。</p>
+    <div>一些文本。默认书写方向</div>
+    <div class="ex1">一些文本。从右到左的书写方向</div>
+    <hr>
+    <h1>增加单词之间的空白空间</h1>
+    <p>这个例子演示了如何增加一个段落中的单词之间的空白空间。</p>
+    <p class="word">This is some text. This is some text.</p>
+    <hr>
+    <h1>在元素内禁用文字环绕</h1>
+    <p>这个例子演示了如何禁用一个元素内的文字环绕。</p>
+    <p class="white_space">
+        这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。
+        </p>
+    <h1>垂直对齐图像</h1>
+    <p>这个例子演示了如何设置文本的垂直对齐图</p> 
+    <p>一个 <img src="../img/logo.jpg" alt="logo" width="270" height="50">默认对齐的图像</p>
+    <p>一个 <img class="top" src="../img/logo.jpg" alt="logo" width="270" height="50">text-top 对齐的图像</p>
+    <p>一个 <img class="bottom" src="../img/logo.jpg" alt="logo" width="270" height="50">text-bottom 对齐的图像</p>
+    <hr>
+    <h1>添加文本阴影</h1>
+    <p>这个例子演示了如何设置文本阴影。</p>
+    <h1 class="text_shadow">Text-shadow 效果</h1>
+</body>
+</html>

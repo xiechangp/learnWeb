@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input标签元素</title>
+    <link rel="icon" href="./img/js1.png">
+</head>
+<body>
+    <form action="视频播放.html">
+        选择你喜欢的颜色：<input type="color" name="favcolor"><br>
+        <input type="submit" value="提交">
+    </form>
+    <hr>
+    <h2>表单元素&lt;datalist&gt;预定义值</h2>
+    <form action="视频播放.html" method="get">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+        </datalist>
+        <input type="submit" value="xx">
+    </form>
+    <hr>
+    <h2>表单元素&lt;keygen&gt;元素 加密传输</h2>
+    <form>
+        用户：<input type="text" name="user"><br>
+        密码：<input type="password" name="pwd"><br>
+        加密：<keygen name="security"><br>
+        <input type="submit" value="提交">
+    </form>
+    <hr>
+    <h2>&lt;form&gt;/&lt;input&gt;autocomplete属性</h2>
+    <form action="" autocomplete="on">
+        First name: <input type="text" name="fname" autocomplete="off"><br>
+        Last name: <input type="text" name="lname" ><br>
+        E-mail: <input type="email" name="email" autocomplete="off">
+        <input type="submit">
+    </form>
+    <hr>
+    <h2>novalidate元素无需验证提交表单</h2>
+    <form action="" novalidate autocomplete="off">
+        E-mail: <input type="email" name="user_email" >
+        <input type="submit">
+    </form>
+    <hr>
+    <h2>autofocus属性</h2>
+    <!-- autofocus 属性是一个布尔属性。
+    autofocus 属性规定在页面加载时，域自动地获得焦点。 -->
+    <form action="" >
+        name: <input type="text" name="name" autofocus><br>
+        psw: <input type="password" name="pwd" ><br>
+        <input type="submit">
+    </form>
+    <hr>
+    <h2> form 属性form 属性规定输入域所属的一个或多个表单。</h2>
+    <form action="" id="form1" autocomplete="off">
+        Fname:<input type="text" name="Fname">
+        <input type="submit" value="提交">
+    </form>
+    <p>"Lname 字段没有在form表单之内，但它也是form表单的一部分"</p>
+    Lname: <input type="text" name="Lname" form="form1" >
+    <hr>
+    <h2>&lt;input&gt;formaction属性与formmethod属性</h2>
+    <form action="./视频播放.html" method="get">
+        用户：<input type="text" name="user"><br>
+        <input type="submit" value="action提交">
+        <input type="submit" formmethod="post" formaction="./html5_拖放_Drag_Drop.html" value="formaction提交">
+    </form>
+    <hr>
+    <h2>image</h2>
+    <form action="">
+        用户： <input type="text" name="user"><br>
+        <input type="image" src="./img/dog.jpg" alt="Submit" width="40" height="50">
+    </form>
+    <hr>
+    <h2>input multiple属性</h2>
+    <p>尝试选取一张或者多种图片。</p>
+    Select images: <input type="file" name="img" multiple><br>
+    <input type="submit" >
+    <hr>
+    <h2>input pattern属性与placeholder属性与required属性</h2>
+    <!-- <input> pattern 属性
+    pattern 属性描述了一个正则表达式用于验证 <input> 元素的值。
+    注意:pattern 属性适用于以下类型的 <input> 标签: text, search, url, tel, email, 和 password. -->
+    <!-- placeholder 属性提供一种提示（hint），描述输入域所期待的值。
+    简短的提示在用户输入值前会显示在输入域上。 -->
+    <!-- required 属性是一个 boolean 属性.
+    required 属性规定必须在提交之前填写输入域（不能为空）。
+    注意:required 属性适用于以下类型的 <input> 标签：text, search, url, telephone, email, password, date pickers, number, checkbox, radio 以及 file。 -->
+
+    <form action="">
+         Fname <input type="text" name="fname" placeholder="First name" pattern="[A-Za-z]{3}" title="请输入三个英文字母"> <br>
+         Lname <input type="text " name="lname" placeholder="Last name"><br>
+         phone <input type="telephone" name="phone" required><br>
+         <input type="submit" value="提交">
+    </form>
+      </body>
+</html>

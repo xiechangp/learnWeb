@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="box" hello="world">我是小猪</div>
+    <script>
+        // 操作元素的属性
+        // 1. attr() !一般用于操作元素的自定义属性
+        // 1-1 attr() 获取
+       /*  console.log($('div').attr('hello'));
+        // 1-2 attr() 设置 增加 修改
+        $('div').attr('hello','我变了');
+        $('div').attr('hello2','加一个');
+        // 2. removeAttr() 删除元素属性
+        $('div').removeAttr('hello2'); */
+
+        // 1. prop() 获取 ！ 只能获取到prop()设置的属性
+        console.log($('div').prop('hello3')); 
+        // 1-1 prop() 设置  自定义的属性只会响应在对象身上 而不是在元素上
+        $('div').prop('id','con')
+        
+        $('div').prop('hello3','object');
+        console.log($('div'));
+        console.log($('div').prop('hello3')); 
+
+        // 2. removeProp() ! 只能删除自定义的属性
+        $('div').removeProp('hello3');
+        console.log($('div'));
+
+    </script>
+</body>
+</html>

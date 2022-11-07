@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button>按钮</button>
+    <input type="text" id="ipt">
+    <script>
+        /* 
+            1.bubbles 返回一个布尔值，表示当前事件是否会冒泡
+            大部分事件都会冒泡  focus blur scroll 事件不会冒泡
+        */
+         let input = document.querySelector('#ipt');
+      /*  input.onfocus = function(e){
+            console.log(e.bubbles); //false
+        } */
+        let btn = document.querySelector('button');
+        // 2.stopPropagation() 阻止冒泡或者捕获
+        btn.onclick = function(e){
+            // 阻止冒泡
+            e.stopPropagation();
+            console.log(e.bubbles);
+            this.innerHTML = '阻止冒泡';
+        }
+        document.body.onclick = function(e){
+            console.log(this);
+        }
+        // cancelBubble
+        // stopImmediatePropagation 停止传播后，后面的事件全部失效
+    </script>
+</body>
+</html>

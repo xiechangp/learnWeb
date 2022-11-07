@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/dayjs/1.11.6/dayjs.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+        <h2>显示格式化后的时间</h2>
+        <!-- 计算属性实现 -->
+        <h2>现在是:{{fmtTime}}</h2>
+        <!-- methods实现 -->
+        <h2>现在是:{{getNewTime()}}</h2>
+        <!-- 过滤器实现 -->
+        <h2>Jack需要的时间格式:{{time | timeFormater}}</h2>
+        <!-- 过滤器实现（传参） -->
+        <h2>Nick需要的时间格式:{{time | timeFormater('YYYY-MM-DD')}}</h2>
+        <h2>Lucy需要的时间格式:{{time | timeFormater('YYYY-MM-DD') | mySlice }}</h2>
+        <!-- v-bind 过滤器 -->
+        <h2 :x="msg | mySlice">111 </h2>
+    </div>
+
+    <div id="root2">
+        <h2>{{msg | mySlice}}</h2>
+    </div>
+
+    <script>
+
+        // 定义全局过滤器
+        Vue.filter('mySlice',function(val){
+            return val.slice(0,4)
+        })
+
+        new Vue({
+            el:"#root",
+           
+            data() {
+                return {
+                    time:1621561377603,
+                    msg:"hello",
+                }
+            },
+            computed:{
+                fmtTime(){
+                    return dayjs(this.time).format('YYYY年MM月DD日 HH:mm:ss')
+                }
+            },
+            methods: {
+                getNewTime(){
+                    return dayjs().format("YYYY年MM月DD日 HH:mm:ss")
+                }
+            },
+            filters:{
+                timeFormater(val,str="YYYY年MM月DD日 HH:mm:ss"){
+                    return dayjs(val).format(str)
+                },
+                // mySlice(val){
+                //     return val.slice(0,4)
+                // }
+            },
+        })
+        new Vue({
+            el:"#root2",
+            data() {
+                return {
+                    msg:"Hello,root2"
+                }
+            },
+        })
+    </script>
+</body>
+</html>

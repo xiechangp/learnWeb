@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            margin: auto;
+        }
+        #nav {
+            width: 100px;
+            height: 30px;
+            background-color: antiquewhite;
+            position: relative;
+        }
+
+        #text {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            display: none;
+            position: absolute;
+            top: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="nav">
+            <div id="text"></div>
+        </div>
+        
+    </div>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            /* $('#nav').mouseover(function(){
+                $('#text').show()
+            })
+            $('#nav').mouseout(function(){
+                $('#text').hide()
+            }) */
+            $('#nav').mouseenter(function(){
+                $('#text').stop().slideDown(1000)
+            })
+            $('#nav').mouseleave(function(){
+                $('#text').stop().slideUp(1000)
+            })
+        })
+    </script>
+</body>
+
+</html>

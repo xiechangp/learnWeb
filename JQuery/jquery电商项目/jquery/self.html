@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/Bootstrap5/bootstrap-5.1.3-dist/css/bootstrap.min.css" />
+    <script src="/Bootstrap5/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        个人中心
+        <p class="active">  
+            <a href="./index.html">返回首页</a>
+        </p>
+    </div>
+    <form action="">
+        <div class="mb-3 mt-3">
+          <label  class="form-label" >用户名:</label>
+          <input type="text" class="form-control"   name="username" disabled>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">昵称:</label>
+          <input type="text" class="form-control"   name="nickname">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">年龄:</label>
+          <input type="text" class="form-control"  name="age">
+        </div>
+        <label for="">
+             性别： <select name="gender">
+            <!-- <option>请选择</option> -->
+            <option value="男">男</option>
+            <option value="女">女</option>
+          </select>
+        </label>
+        <p >
+            <a href="rpassword.html" >修改密码</a>
+        </p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <script src="/JQuery/jquery-3.6.0.min.js">  </script>
+      <script src="../js/self.js"></script>
+</body>
+</html>

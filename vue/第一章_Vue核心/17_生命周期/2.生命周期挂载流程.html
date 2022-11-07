@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+        <h2>{{n}}</h2>
+        <button @click="add">n++</button>
+
+    </div>
+
+
+
+</body>
+<script>
+    new Vue({
+        el: "#root",
+        template: `
+        <div>
+
+        <h2>{{n}}</h2>
+        <button @click="add">n++</button>
+
+        </div>
+        `,
+        data() {
+            return {
+                n: 1
+            }
+        },
+        methods: {
+            add() {
+                this.n++
+            }
+        },
+        // 此时：无法通过vm访可data中的数据、methods中的方法.
+        beforeCreate() {
+            console.log("beforeCreate");
+        },
+        // 此时：可以通过vm访可到data中的数据、methods中配置的方法
+        created() {
+            console.log("created");
+        },
+/*       此时：
+        1.页面呈现的是未经Vue编译的DOM结构.
+        2.所有对DOM的操作，最终都不奏效 */
+        beforeMount() {
+            console.log("beforeMount");
+        },
+        /* 
+        此时：
+            1.页面中呈现的是经过Vue编译的DOM。
+            2对DOM的操作均有效（尽可能免），
+        至此初始化过程结束，一般在进行：开启
+        定时器、发送网络请求、订阅消息、定自
+        定义事件、等初始化操作，
+        */
+        mounted() {
+            console.log("mounted")
+        },
+    })
+</script>
+
+</html>

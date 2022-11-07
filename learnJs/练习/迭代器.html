@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <input type="text" name="word" >
+    <span></span> -->
+    <script>
+
+        let arr = [1,2,3,4];
+        let arr2= arr.filter(function(item){
+        return item == 1 ? item:0
+    })
+    console.log(arr2);
+     /*    arr = arr.map(function(value,index,arr){
+           return value = `${value}-小狗`;
+        })
+        console.log(arr); */
+        // console.log(arr2);
+        // let n = 3;
+       /*  let arr2 = arr.filter((arr)=>{
+            return arr>2;
+        })
+        
+        console.log(arr2); */
+
+
+/*         let arr = ['php','js'];
+        let keyword = document.querySelector('[name="word"]');
+        keyword.addEventListener('keyup',function(){
+            const res = arr.some(item =>{
+                return this.value.indexOf(item) !== -1;
+            });
+      
+        if(res === false){
+            let span = document.querySelector('span');
+            span.innerHTML = "必须包含"+arr.join(',')+"关键字";
+        }else{
+            document.querySelector('span').innerHTML = ''
+        }
+  }) */
+
+
+        /*   let user = arr.every((item,index,arr)=>{
+              console.log(item);
+              return true;
+          }) */
+        /*     let users = arr.some((item,index,arr)=>{
+                console.log(item);
+                return true;
+            }) */
+
+        /* let everSut = arr.every(item=> item.js>=60);
+        everSut?console.log('都及格了'):console.log('还有未及格的') */
+
+
+
+
+        // for(let value of arr.values()){
+        //     console.log(value);
+        // }
+        // for(let key of arr.keys()){
+        //     console.log(key);
+        // }
+        // let entries = arr.entries();
+        // let {done,value:[a,b]} = entries.next();
+        // console.log(a,b);
+        /* for(let [key,value] of arr.entries()){
+            console.log(value)
+        } */
+    </script>
+</body>
+
+</html>

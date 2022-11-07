@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>未完成版</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .todo-main li button {
+            display: none;
+            /* display: block; */
+            
+        }
+    </style>
+    <script type="text/javascript" src="/JQuery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var dataJson = [{
+                    'content': '吃饭'
+                },
+                {
+                    'content': '睡觉'
+                },
+                {
+                    'content': '滑雪'
+                },
+                {
+                    'content': '打鼓'
+                }
+            ]
+            // console.log(dataJson[0].content);
+
+            // 渲染多选框
+            dataJson.forEach(element => {
+                 $('.todo-main').append(`
+                    <li class="todoItem" style="background: rgb(255, 255, 255);">
+                        <label>
+                            <input type="checkbox">
+                            <span>${element.content}</span>
+                        </label>
+                        <button class="btn btn-danger" style="display: none;">删除</button>
+                    </li>
+             `)
+            });
+
+        // 出现删除
+        $('.todo-main').mousemove(function(e){
+            if(e.target.nodeName === 'LABEL'){
+                $(e.target.nextElementSibling).attr('style','display: block');
+                $(e.target.parentElement).attr('style','background: #cccccc');
+            }
+            if(e.target.nodeName === 'LI'){
+                $(e.target.lastElementChild).attr('style','display: block')
+                $(e.target).attr('style','background: #cccccc');
+            }
+        })
+
+        $('.todo-main').mousemove(function(){
+            $('.todo-main>li').mouseleave(function(){
+                $('.todo-main>li>button').attr('style','display: none');
+                $('.todo-main>li').attr('style','background: rgb(255, 255, 255)')
+            })
+            
+        })
+        
+        // 删除操作
+        $('.todo-main').click(function(e){
+            if(e.target.nodeName === 'BUTTON'){
+                e.target.parentNode.remove();
+            }   
+            //获取全部任务
+            $('.todo-footer>span>#allTodos').text(`${$('.todo-main>li').length}`);
+            $('#checkAll').click(function(){
+            for (const item of $('[type=checkbox]')) {
+                    item.checked = this.checked;
+             } 
+        }) 
+           //单选按钮
+            $('[type=checkbox]').click(function () {
+                aboutSelectingAll();
+            })
+        })
+
+        // 回车新增
+        $(window).keyup(function(e){
+            // console.log(e);
+            if(e.key === 'Enter'){
+                // console.log('1111');
+                $('.todo-main').append(`
+                    <li class="todoItem" style="background: rgb(255, 255, 255);">
+                        <label>
+                            <input type="checkbox">
+                            <span>${$('#newTodo').val()}</span>
+                        </label>
+                        <button class="btn btn-danger" style="display: none;">删除</button>
+                    </li>
+             `)
+            $('#newTodo').val('')
+            //获取全部任务
+            $('.todo-footer>span>#allTodos').text(`${$('.todo-main>li').length}`);
+            $('#checkAll').click(function(){
+            for (const item of $('[type=checkbox]')) {
+                    item.checked = this.checked;
+             } 
+        }) 
+           //单选按钮
+            $('[type=checkbox]').click(function () {
+                aboutSelectingAll();
+            })
+
+            }
+            
+        })
+        // 获取全部任务
+        $('.todo-footer>span>#allTodos').text(`${$('.todo-main>li').length}`);
+        $('#checkAll').click(function(){
+            for (const item of $('[type=checkbox]')) {
+                    item.checked = this.checked;
+             } 
+        }) 
+        //单选按钮
+            $('[type=checkbox]').click(function () {
+                // 已完成的任务
+        //      for (let i = 0; i < $('[type=checkbox]').length-1; i++) {
+        //           if($('[type=checkbox]')[i].checked === true){
+        //              // console.log(item);
+        //              // console.log($('[type=checkbox]')[i].checked);
+        //              $('.todo-footer>span>#allCompletedTodos').text(`${i+1}`);
+        //     }
+        // }
+        $('#removeAllCompleted').click(function(){
+            // console.log(11);
+            for (let i = 0; i < $('[type=checkbox]').length-1; i++) {
+                if($('[type=checkbox]')[i].checked === true){
+                    $('[type=checkbox]')[i].parentNode.parentNode.remove();
+            }      
+            }  
+        // 获取全部任务
+        $('.todo-footer>span>#allTodos').text(`${$('.todo-main>li').length}`);
+        $('#checkAll').click(function(){
+            for (const item of $('[type=checkbox]')) {
+                    item.checked = this.checked;
+             } 
+        }) 
+        })
+                aboutSelectingAll();
+            })
+       
+        //清除已完成任务
+        $('#removeAllCompleted').click(function(){
+             $("#root > div > div > ul input:checked").parents('li').remove();
+             if($('#root > div > div > ul > li').length === 0){
+                 $('#checkAll').prop('checked',false);
+             }
+        })
+       // #allCompletedTodos
+        // 已完成任务/全部
+        $('#root > div > div').click(function(){  
+            $('#allCompletedTodos').html(`${$("#root > div > div > ul input:checked").length}`);
+            $('.todo-footer>span>#allTodos').html(`${$('.todo-main>li').length}`);
+        })
+
+
+
+         //点亮全框
+         function aboutSelectingAll() {
+                let flag = true;
+                for (let j = 0; j < $('[type=checkbox]').length-1; j++) {
+                    if ($('[type=checkbox]')[j].checked === false) {
+                        flag = false;
+                        break;
+                    }   
+                }
+                // console.log(flag);
+                $('#checkAll')[0].checked = flag
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="todo-container">
+            <div class="todo-wrap">
+                <div class="todo-header">
+                    <input id="newTodo" type="text" placeholder="请输入你的任务名称，按回车键确认" />
+                </div>
+                <ul class="todo-main">
+                    <!-- <li class="todoItem" style="background: rgb(255, 255, 255);">
+                        <label>
+                            <input type="checkbox">
+                            <span>xxx</span>
+                        </label>
+                        <button class="btn btn-danger" style="display: block;">删除</button>
+                    </li> -->
+                </ul>
+                <div class="todo-footer">
+                    <label>
+                        <input id="checkAll" type="checkbox" />
+                    </label>
+                    <span>
+                        已完成<span id="allCompletedTodos">0</span> / 全部<span id="allTodos">2</span>
+                    </span>
+                    <button id="removeAllCompleted" class="btn btn-danger">清除已完成任务</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

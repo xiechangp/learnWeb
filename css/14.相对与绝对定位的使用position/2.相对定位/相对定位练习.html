@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对定位练习</title>
+    <style>
+    .box{
+        width: 300px;
+        height: 300px;
+        border: 1px solid red;
+        padding: 10px;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    a{  
+        text-decoration: none;
+    }
+    .box li a{
+        width: 100px;
+        height: 100px;
+        display: block;
+        background-color: lightpink;
+        font-size:15px;
+        text-align: center;
+        line-height: 100px;
+        float: left;
+    }
+    .box li a:hover{
+        background-color: rgb(98, 98, 226);
+    }
+    .box :nth-of-type(1)>a{
+        
+    }
+    .box :nth-of-type(2)>a{
+        position: relative;
+        bottom: -200px;
+        right: -100px;
+    }
+    .box :nth-of-type(3)>a{
+        
+    }
+    .box :nth-of-type(4)>a{
+        position: relative;
+        top: 100px;
+    }
+    .box :nth-of-type(5)>a{
+        
+    }
+    </style>    
+</head>
+<body>
+    <!-- 
+        使用div和超链接a布局页面
+        每个超链接宽度高度都是100px，背景颜色是粉色，鼠标指针移上去为蓝色
+        使用相对定位改变超链接的位置
+     -->
+     <div class="box">
+             <ul>
+                 <li><a href="">链接1</a></li>
+                 <li><a href="">链接2</a></li>
+                 <li><a href="">链接3</a></li>
+                 <li><a href="">链接4</a></li>
+                 <li><a href="">链接5</a></li>
+             </ul>
+     </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [9,3,6,2,4,1,8,5,7];
+        console.log(arr);
+        
+        //假设最小的数字索引是0
+        var minIndex = 0;
+        for(var i=1; i<arr.length; i++){
+            if(arr[i] < arr[minIndex]){
+                //如果条件为 true，那么替换 minIndex
+                minIndex = i;
+            }
+        }
+        //交换索引 0 位置和 minIndex 位置
+        var temp = arr[0];
+        arr[0] = arr[minIndex];
+        arr[minIndex] = temp;
+        console.log(arr);
+
+        var arr = [9,3,6,2,4,1,8,5,7];
+        console.log(arr);
+        for(var j=0; j<arr.length-1; j++){
+        //假设最小的数字索引是0
+        var minIndex = j;
+        for(var i=j+1; i<arr.length; i++){
+            if(arr[i] < arr[minIndex]){
+                //如果条件为 true，那么替换 minIndex
+                minIndex = i;
+            }
+        }
+        //交换索引 0 位置和 minIndex 位置
+        var temp = arr[j];
+        arr[j] = arr[minIndex];
+        arr[minIndex] = temp;
+        
+    }
+    console.log(arr)
+    </script>
+</body>
+</html>

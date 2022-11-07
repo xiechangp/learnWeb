@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    class User{
+    //     constructor(name,age){
+    //         this.name = name;
+    //         this.age = age;
+    //     }
+    //     sayHi(){
+    //         console.log(`我叫${this.name}，我今年${this.age}岁啦`);
+    //     }
+    // }
+    // let user = new User('小田',26);
+    // console.log(user);
+    // user.sayHi();
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+        
+     }
+    Person.prototype.sayHi = function(){console.log('sayHi')};
+    // //创建实例方法
+    // let jack = new Person('jack',18);
+    let nick = new Person('nick',21);
+
+    // console.log(jack.__proto__ === Person.prototype)
+    // console.log(nick.__proto__ === Person.prototype)
+    // console.log(nick.__proto__ === jack.__proto__);
+
+    // jack.sayHi();
+    console.log(nick);
+
+    // console.log(jack)
+    </script>
+</body>
+</html>

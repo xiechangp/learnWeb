@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <style>
+        a,div,button{
+            margin-bottom: 20px;
+        }
+    </style>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+    <!-- 
+        Vue中的事件修饰符：
+            1.prevent:阻止默认事件（常用）
+            2.stop:阻止事件目泡（常用）
+            3.once:事件只触发一次（常用）
+            4.capture:使用事件的捕获模式
+            5.self:只有event.target是当前操作的元素时才触发事件
+            6:passive:事件的默认行为立即执行，无需等待事件回调执行完中
+     -->
+    <div id="root">
+        <div  @click="showInfo1"  style="padding: 50px; width: 100px; background: rgb(195, 231, 37);">
+             <a href="https://www.baidu.com" @click.prevent.stop="showInfo" >跳转至百度</a>  
+        </div>
+       
+
+        <div  @click="showInfo1"  style="padding: 50px; width: 100px; background: rgb(195, 231, 37);">
+            <div   @click.stop="showInfo2" style="width: 100px; height: 100px; background: rgb(61, 188, 204);"></div>
+        </div>
+
+        <button @click.once="showInfo3">once</button>
+
+        <div  @click.capture="showInfo4"  style="padding: 50px; width: 100px; background: rgb(195, 231, 37);">
+            <div   @click="showInfo5" style="width: 100px; height: 100px; background: rgb(61, 188, 204);"></div>
+        </div>
+    </div>
+    
+
+    <script>
+        new Vue({
+            el:"#root",
+            methods: {
+                showInfo(){
+                    console.log("小a");
+                },
+                    showInfo6(){
+                      console.log("大div");  
+                    },
+                showInfo1(){
+                    console.log("大div");
+                },
+                showInfo2(){
+                    console.log("小div");
+                },
+                showInfo3(){
+                    alert("嗨咯ONCE");
+                },
+                showInfo4(){
+                    console.log("1");
+                },
+                showInfo5(){
+                    console.log("2");
+            }
+        }
+        })
+
+    </script>
+</body>
+</html>

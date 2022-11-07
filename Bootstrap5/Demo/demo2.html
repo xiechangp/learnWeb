@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo2</title>
+    <link rel="stylesheet" href="/Bootstrap5/bootstrap-5.1.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css" />
+    <style>
+        .display_inline_block {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " id="NavigationBar">
+        <div class="container-fluid">
+            <a class="button" href="#">
+                <i class="bi bi-house-door"></i>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">fourC学院</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            前端知识
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">CSS</a></li>
+                            <li><a class="dropdown-item" href="#">HTML</a></li>
+                            <li><a class="dropdown-item" href="#">Javascript</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Scss</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            后端知识
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item" href="#">PHP</a></li>
+                            <li><a class="dropdown-item" href="#">Java</a></li>
+                            <li><a class="dropdown-item" href="#">Jsp</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">MySQL</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <form class="d-flex" role="search">
+                            <input class="form-control w-auto me-2" type="search" placeholder="关键字" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">搜索</button>
+                        </form>
+                    </li>
+
+                </ul>
+                <button type="button" class="btn ">
+                    站内信 <span class="badge rounded-pill bg-secondary text-light">36</span>
+                </button>
+                <div class="btn-group" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle btn-lg" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                个人中心
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another </a></li>
+                                <li><a class="dropdown-item" href="#">Something </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 导航栏尾部 -->
+    <!-- 警告框 -->
+    <section class="pt-3">
+        <div class="container">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>恭喜!</strong> 登录成功.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </section>
+    <!-- 巨幕 -->
+    <section>
+        <div class="container">
+            <div class="p-4 p-lg-5 bg-light text-dark ">
+                <h1>fourC学院</h1>
+                <p>学的不仅是技术，更是梦想！！！</p>
+                <button type="button" class="btn btn-primary">立即启航</button>
+            </div>
+        </div>
+    </section>
+    <!-- 热门课程 -->
+    <section class="p-3 ">
+        <div class="container">
+            <ul class="nav bg-light">
+                <li class="nav-item">
+                    <a class="nav-link text-primary h3 display_inline_block p-2" aria-current="page" href="#">首页</a>
+                    <a class="nav-link display_inline_block p-0" href="#">/&nbsp;热门课程</a>
+                </li>
+            </ul>
+            <div class="row g-3 pt-3">
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/2.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">Vue</h3>
+                            <p class="card-text">前端必会</p>
+                            <span class="badge bg-success">Free</span>
+                            <span class="badge bg-info">基础</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/2.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">Vue</h3>
+                            <p class="card-text">前端必会</p>
+                            <span class="badge bg-success">Free</span>
+                            <span class="badge bg-info">基础</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/2.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">Vue</h3>
+                            <p class="card-text">前端必会</p>
+                            <span class="badge bg-success">Free</span>
+                            <span class="badge bg-info">基础</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/2.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">Vue</h3>
+                            <p class="card-text">前端必会</p>
+                            <span class="badge bg-success">Free</span>
+                            <span class="badge bg-info">基础</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/2.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">Vue</h3>
+                            <p class="card-text">前端必会</p>
+                            <span class="badge bg-success">Free</span>
+                            <span class="badge bg-info">基础</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/2.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">Vue</h3>
+                            <p class="card-text">前端必会</p>
+                            <span class="badge bg-success">Free</span>
+                            <span class="badge bg-info">基础</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/2.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">Vue</h3>
+                            <p class="card-text">前端必会</p>
+                            <span class="badge bg-success">Free</span>
+                            <span class="badge bg-info">基础</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/2.svg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3 class="card-title">Vue</h3>
+                            <p class="card-text">前端必会</p>
+                            <span class="badge bg-success">Free</span>
+                            <span class="badge bg-info">基础</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 分页 -->
+            <nav aria-label="Page navigation example" class="p-3">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+    </section>
+    <!-- 企业合作 -->
+    <section>
+        <div class="container">
+            <h2>企业合作</h2>
+            <hr class="">
+            <div class="row g-3 pt-3">
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/showcase.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/showcase.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/showcase.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/showcase.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/showcase.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/showcase.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/showcase.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/showcase.svg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <!-- 新手入门 -->
+    <section class="pt-3">
+        <!-- <div class="container"> -->
+            <table class="table table-borderless bg-dark bg-opacity-75 text-light text-center mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">新手入门</th>
+                    <th scope="col">新手入门</th>
+                    <th scope="col">新手入门</th>
+                    <th scope="col">新手入门</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Jack</td>
+                    <td>Tom</td>
+                  </tr>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Jack</td>
+                    <td>Tom</td>
+                  </tr>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Jack</td>
+                    <td>Tom</td>
+                  </tr>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Jack</td>
+                    <td>Tom</td>
+                  </tr>
+                </tbody>
+              </table>
+        <!-- </div> -->
+    </section>
+    <!-- 底部 -->
+    <footer class="bg-dark text-white text-center p-3">
+        <div class="container">
+            <p>
+                fourC&copy;2022年10月10日
+            </p>
+        </div>
+    </footer>
+
+    <script src="/Bootstrap5/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/JQuery/jquery-3.6.0.min.js"></script>
+    <script>
+        window.onscroll = function(){
+            // console.log(typeof scrollY);
+            if(scrollY > 50){
+                $('#NavigationBar').addClass('fixed-top');
+            }else{
+                $('#NavigationBar').attr('class','navbar navbar-expand-lg navbar-light bg-light')
+            }
+        }
+    </script>
+</body>
+
+
+</html>

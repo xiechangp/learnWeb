@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    let romanToInt = function(s) { 
+    let mapValues = new Map([['I',1],['V',5],['X',10]]);
+    mapValues.set('L',50);
+    mapValues.set('C',100);
+    mapValues.set('D',500);
+    mapValues.set('M',1000);
+    /* for (const [keys,values] of mapValues) {
+        console.log(keys,values);
+    } */
+    let ans = 0;
+    const n = s.length;
+    // console.log(object);
+    // console.log(n);
+    for (let i = 0; i < n; i++) {
+        let value = mapValues.get(s[i]);
+        if(i<n-1 && value<mapValues.get(s[i+1])){
+            ans -= value;
+        }
+        else{
+            ans += value;
+        }
+    }
+    return ans;
+};
+console.log(romanToInt('MII')); 
+    </script>
+</body>
+</html>

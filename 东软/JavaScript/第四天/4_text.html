@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+      /*   4.统计字符串出现最多的字母
+        如: 输入 asodfoaidnfasdfnoansodfffnnnnnnnn
+        返回 " n 出现11次" */
+        let str = prompt('请输入');
+        let str2 = str.split('').sort();
+        let max_word = '';
+        let count = 0;
+        let maxLength = 0;
+        for(let i=0;i<str2.length;i++){
+            if(str2[i]==str[i+1]){
+                ++count;
+                // console.log(count);
+                if(count > maxLength){
+                    // console.log(count);
+                    maxLength = count;
+                    max_word = str2[i];
+                }
+            }else{
+                count = 1;
+            }
+        }
+       alert(`${max_word}出现了${maxLength}次`)
+    </script>
+</body>
+
+</html>

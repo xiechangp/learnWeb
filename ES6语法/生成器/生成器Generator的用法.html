@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用场景：为不具备Interator接口的对象提供了遍历操作
+        
+        function* objectEntries(obj){
+            const propKeys = Object.keys(obj);
+            // console.log(propKeys);
+            for (const p of propKeys) {
+                yield [p,obj[p]];
+            }
+        }
+        const obj = {
+            name: '小马哥',
+            age: 18
+        }
+        obj[Symbol.iterator] = objectEntries;
+        console.log(obj);
+
+        for (const [key,value] of objectEntries(obj)) {
+            console.log(`${key}:${value}`);
+        }
+    </script>
+</body>
+</html>

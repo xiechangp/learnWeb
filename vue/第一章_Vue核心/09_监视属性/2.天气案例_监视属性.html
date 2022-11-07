@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.天气案例_监视属性.html</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root"
+        style="width: 300px; margin: 300px auto; display: flex; flex-direction: column; align-items: center;">
+
+        <!-- <h2>今天天气很{{isHot?"炎热":"寒冷"}}</h2> -->
+        <h2>今天天气很{{info}}</h2>
+        <button @click="changeWeather">点击切换</button>
+        <!-- <button @click="isHot = !isHot">点击切换</button> -->
+
+    </div>
+
+
+    <script>
+        let vm = new Vue({
+            el: "#root",
+            data() {
+                return {
+                    isHot: true
+                }
+            },
+            methods: {
+                changeWeather() {
+                    return this.isHot = !this.isHot;
+                }
+            },
+            computed: {
+
+                info() {
+                    return this.isHot ? "炎热" : "寒冷";
+                }
+            },
+            watch: {
+                // isHot:{
+                //     handler(newValue,oldValue){
+                //         console.log("触发",newValue,oldValue);
+                //     }
+                // },
+                info: {
+                    immediate: true,
+                    handler(newValue, oldValue) {
+                        console.log("触发", newValue, oldValue);
+                    }
+                }
+            }
+        })
+        // vm.$watch('isHot',function(newValue,oldValue){
+        //     console.log("isHot",newValue,oldValue);
+        // })
+        vm.$watch('isHot', {
+            handler(newValue, oldValue) {
+                console.log("触发", newValue, oldValue);
+            }
+        })
+    </script>
+</body>
+
+</html>

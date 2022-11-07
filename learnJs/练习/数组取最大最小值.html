@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr = [1,2,55,6];
+        // console.log(Math.min.apply(null,arr));
+        // console.log(Math.max.apply(null,arr));
+
+        // console.log(Math.ceil(5.01))
+        // console.log(Math.floor(5.01))
+        // console.log((5.5515).toFixed(2))
+
+        // random 取 nMin-nMax之间的数  min+floor(Math.random()*(max-min)+1);
+        // 取100-200之间的随机数（包括200）
+        /*  let min = 100;
+         let max = 200;
+         random_ = (min,max) =>{
+             let rd = min+Math.floor(Math.random()*(max-min+1));
+             // alert(rd);
+             console.log(rd);
+         }
+         random_(100,10000); */
+
+        //数组随点名
+
+        // console.log( arr[0])      
+        // let index = Math.floor(Math.random()*arr.length);
+        // arr.splice(index,1);
+        // console.log(arr);
+
+        //随机点名
+        //     var arr = ['A','B','C','D'];
+        //     while(arr.length>0){
+        //     if(arr.length == 4){
+        //         console.log(arr);
+        //      }
+        //     let index = Math.floor(Math.random()*(arr.length));
+        //     alert(arr[index]);
+        //     arr.splice(index,1);
+        //     console.log(arr);
+        // }
+        //         var twoSum = function(nums, target) {
+        //     let arr=[];
+        //     for(let i = 0;i<nums.length;i++){
+        //         if(nums[i]+nums[i+1]==target){
+
+        //             arr.push(Number(i))
+        //             arr.push(Number(i+1));
+        //             return arr;
+        //         }
+        //     }
+        // };
+
+        //    console.log(twoSum([1,2,3],5))
+
+        // var isPalindrome = function(x) {
+
+        //     x == String(x).split('').reverse().join('') ? true : false;
+        // };
+
+        // console.log(isPalindrome(121));
+
+        // var reverse = function(x) {
+        //     if(x >= 0){
+        //     let t = String(x).split('').reverse().join('');
+        //     return Number(t);
+        //     }
+        //     else 
+        //     {
+        //         // String(x).split('').sort()
+        //         // console.log( String(x).split('').shift());
+        //         let x2=String(x).split('')
+        //         x2.splice(0,1);
+        //          console.log(x2)
+        //         let t = x2.reverse().join('');
+        //         return Number(t)*-1;
+        //     }
+
+        // };
+        //    console.log(reverse(122));
+
+
+        // console.table(arr.sort((a,b)=>{
+        //     return a-b;
+        // }))
+        //  let arr = [5,4,2,8];
+        //     function sort(arr,callback){
+        //         let temp=0;
+        //         for(let i=0;i<arr.length;i++){
+        //             for(let j=0;j<arr.length-1;j++){
+        //                 if(callback(arr[i],arr[j]) > 0 ){ 
+        //                     temp = arr[i];
+        //                     arr[i] = arr[j];
+        //                     arr[j] = temp;
+        //                 }
+
+        //             }
+        //         }
+        //         return arr;
+
+        //     }
+        //     // #c39c83
+        //     console.table(sort(arr,function(a,b){
+        //         return a-b;
+        //     }));
+
+
+        //     function sort2(arr){
+        //         for(let i in arr){
+        //             for(let j in arr){
+        //                 if(arr[i]>arr[j]){
+        //                     let temp = arr[i];
+        //                     arr[i] =arr[j];
+        //                     arr[j] = temp;
+        //                 }
+        //             }
+        //         }
+        //         return arr;
+        //     }
+        //     console.table(sort2(arr));
+
+
+        //     console.log((Math.pow(-2, 31)));
+
+        var reverse = function (x) {
+            if (x == -2147483412) {
+                negative(x)
+            }
+            if (x >= (1534236469) || (x < (-1563847411) && x > (-2147483649))) return 0;
+            if (x > 0) {
+                let t = String(x).split('').reverse().join('');
+                return Number(t);
+            } else {
+                negative(x);
+            }
+            function negative(x) {
+                let x2 = String(x).split('')
+                x2.splice(0, 1);
+                let t = x2.reverse().join('');
+                return Number(t) * -1;
+            }
+        };
+        console.log(reverse(-123));
+    </script>
+</body>
+
+</html>

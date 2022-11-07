@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- v-for遍历 数组  -->
+        <h2>人员列表</h2>
+        <input type="text" placeholder="请输入查询的名字" v-model="value">
+        <button @click="sortType = 1" >年龄升序</button>
+        <button @click="sortType = 2" >年龄降序</button>
+        <button @click="sortType = 0" >原顺序</button>
+        <ul>
+            <li v-for="item in selectPersons" :key="item.id">{{item.name}}-{{item.age}}-{{item.sex}}</li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            data() {
+                return {
+                    value: '',
+                    sortType:0,//1是年龄升序 2是降序 0原顺序
+                    persons: [{
+                            id: "001",
+                            name: "周冬雨",
+                            age: 31,
+                            sex: "女"
+                        },
+                        {
+                            id: "002",
+                            name: "马冬梅",
+                            age: 20,
+                            sex: "女"
+                        },
+                        {
+                            id: "003",
+                            name: "周杰伦",
+                            age: 29,
+                            sex: "男"
+                        },
+                        {
+                            id: "004",
+                            name: "温兆伦",
+                            age: 27,
+                            sex: "男"
+                        },
+
+                    ]
+                }
+            },
+            // 计算属性
+            computed: {
+                selectPersons() {
+                    let arr = this.persons.filter(ele => {
+                        return ele.name.indexOf(this.value) !== -1;
+                    });
+                    if(this.sortType){
+                        arr.sort((p1,p2)=>{
+                            return this.sortType === 1 ? p1.age-p2.age : p2.age-p1.age;
+                        })
+                    }
+                    return arr;
+                }
+                
+            },
+        })
+    </script>
+</body>
+
+</html>

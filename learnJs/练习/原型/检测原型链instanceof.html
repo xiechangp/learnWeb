@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function A() {}
+        function B() {}
+        function C() {}
+        let c = new C();
+        B.prototype = c;
+        let b = new B();
+        A.prototype = b;
+        // Object.setPrototypeOf(A,B);
+        // A.prototype = c;
+        // A.prototype = c;
+        let a = new A();
+        // console.dir(a);
+        console.log(a instanceof A);
+        console.log(a instanceof B);
+        console.log(a instanceof C);
+        console.log(b instanceof A);
+        console.log(b instanceof B);
+        console.log(b instanceof C);
+        console.log(a instanceof Object);
+    </script>
+</body>
+</html>

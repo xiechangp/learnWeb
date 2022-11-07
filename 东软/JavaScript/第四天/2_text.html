@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+    /*2.判断一个单词是否是回文(翻转字符串和没翻转之前一样)
+    mamam 返回 true
+    name 返回 fales  */
+    // let str = 'mamam';
+    // console.log(str.split(''));
+    // let str2=str.split('').reverse();
+    // console.log(str2)
+    // console.log(str2.join(''));
+    // if(str !== str2.join('')){
+    //     console.log('fales');
+    // }else{
+    //     console.log('true');
+    // }
+    let str = prompt('请输入:');
+    if(str !== str.split('').reverse().join('')){
+        alert('fales');
+    }else{
+        alert('true');
+    }
+    </script>
+</body>
+</html>

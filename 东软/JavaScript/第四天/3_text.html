@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 3.第二题进阶版本
+    验证回文字符串
+    给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
+
+    输入: "A man, a plan, a canal: Panama" 输出: true
+    输入: "race a car" 输出: false */
+        let str = prompt('请输入:');
+        // let str2=str.toLowerCase();
+        // console.log(str2);
+        s = str.replace(/[\W|_]/g, "").toLowerCase();
+        console.log(s);
+        if (s !== s.split('').reverse().join('')) {
+            alert('fales');
+        } else {
+            alert('true');
+        }
+    </script>
+</body>
+
+</html>

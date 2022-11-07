@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>我是 div 内本身的 p标签</p>
+        <span>我是 div 内本身的 span标签</span>
+        <p>我是 div 内本身的 p标签</p>
+    </div>
+
+    <script>
+       // 获取 div 元素
+       var div = document.querySelector('div');
+       var d = div.offsetHeight;
+       //获取元素尺寸 高度
+       console.log(d);
+
+
+       // 克隆一个 div 元素，不可隆后代元素
+       var clone1 = div.cloneNode(false);
+       // 克隆一个 div 元素 克隆后代元素
+       var clone2 = div.cloneNode(true);
+
+       div.append(clone2)
+       // 输出
+       console.log('不可隆后代元素: ',clone1);
+       console.log('可隆后代元素: ',clone2);
+    </script>
+</body>
+</html>

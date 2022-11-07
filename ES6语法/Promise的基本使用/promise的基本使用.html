@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       /*  let pro = new Promise(function (resolved, rejected) {
+            //执行异步操作
+            let res = {
+                code: 201,
+                data: {
+                    name: '臭猪'
+                },
+                error:'失败了'
+            }
+            setTimeout(() => {
+                if(res.code === 200){
+                    resolved(res.data);
+                }else{
+                    rejected(res.error)
+                }
+            }, 1000);
+        })
+        pro.then((val)=>{
+            console.log(val);
+        },(err)=>{
+            console.log(err);
+        }) */
+        
+        function timeOut(ms){
+            return new Promise((resolved,rejected)=>{
+                setTimeout(() => {
+                    resolved('hello promise success!!!!')
+            }, ms);
+            })
+        }
+        timeOut(2000).then((val)=>{
+            console.log(val);
+        })
+    </script>
+</body>
+
+</html>

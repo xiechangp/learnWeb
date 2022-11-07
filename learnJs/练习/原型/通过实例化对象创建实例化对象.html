@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Xp(name){
+            this.name = name;
+        }
+        console.dir(Xp);
+        let xcp = new Xp('谢长鹏');
+        // console.dir(xcp);
+        // console.log(Xp)
+        // console.log(Object.getPrototypeOf(xcp).constructor)
+        console.dir(Object.getPrototypeOf(xcp).constructor == Xp)
+        let constructor = Object.getPrototypeOf(xcp).constructor;
+        let tjs = new constructor('田静诗')
+        console.log(tjs.name);
+    </script>
+</body>
+</html>

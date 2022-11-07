@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dispaly</title>
+    <style>
+        /* 
+        块级元素：独立一行 
+        h1-h6 p div 列表...
+        */
+        /* 
+            行内元素：不独占一行
+            span a img strong...
+        */
+        /* 块级元素包含行内元素 */
+
+
+        /* 
+            display
+            block 块元素
+            inline 行内元素
+            inline-block 是块元素，但是可以内联
+            none 消失 
+        
+        */
+        div{
+            width: 60px;
+            height: 60px;
+            font-size: 1px;
+            border: 1px solid red;
+            display: inline;
+        }
+        span{
+            width: 60px;
+            height: 60px;
+            font-size: 1px;
+            border: 1px solid red;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>div块元素</div>
+    <span>span行内元素</span>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            margin: 300px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #34495e;
+        }
+
+        div {
+            font-size: 5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #9f5bbc;
+        }
+
+        div>span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+        }
+
+        .color {
+            animation-name: color; /* 关键字名字 */
+            animation-duration: 1s;/* 时间一秒钟 */
+            animation-iteration-count: 2;/* 重复的次数 */
+            animation-timing-function:linear;/* 动画的方式 */
+            animation-direction: alternate;/* 动画来回切换 */
+        }
+        /* 关键帧 */
+        @keyframes color {
+            50% {
+                color: #facb1b;
+                transform: scale(2);/* 放大两倍 */
+            }
+
+            to {
+                color: #fc6051;
+                transform: scale(.2);/* 缩小一半 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>xiechangpeng</div>
+    <script>
+        const div = document.querySelector('div');
+        // console.log([...div.textContent])
+        [...div.textContent].reduce((pre, cur, index) => {
+            pre == index && (div.innerHTML = "");
+            let span = document.createElement('span');
+            span.innerHTML = cur;
+            div.appendChild(span);
+            span.addEventListener('mouseover', function () {
+                this.classList.add('color')
+            });
+            span.addEventListener('animationend',function(){
+                this.classList.remove('color');
+            })
+        }, 0)
+    </script>
+</body>
+
+</html>

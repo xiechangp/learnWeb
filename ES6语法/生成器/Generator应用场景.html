@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function* load() {
+            loadUI();
+            yield showData();
+            hideUI();
+        }
+        let ite = load();
+        ite.next();
+        function loadUI() {
+            console.log('加载loading...页面');
+        }
+
+        function showData() {
+            setTimeout(() => {
+                console.log('数据加载完成');
+                ite.next();
+            }, 1000);
+        }
+
+        function hideUI() {
+            console.log('关闭loading...页面');
+        }
+
+    
+    </script>
+</body>
+
+</html>

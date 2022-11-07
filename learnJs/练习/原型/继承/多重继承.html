@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Animal(name){
+            this.name = name;
+            
+        }
+        Animal.prototype.getName = function(){
+            console.log(this.name);
+        }
+        
+        function Dog(colors){
+            // 继承了Animal
+            this.colors = 'pink';
+        }
+        Dog.prototype.getColors = function(){
+            console.log(this.colors);
+        }
+        function Siberianhusky(){
+            Animal.call(this);
+            Dog.call(this);
+        }
+
+        // 重写原型对象：把父类的共享方法继承下来
+        Siberianhusky.prototype = Object.create(Animal.prototype);
+        Dog.prototype.constructor = Siberianhusky;
+
+        Object.assign(Siberianhusky.prototype,Dog.prototype)
+
+        let s1 = new Siberianhusky();
+        s1.name = '哈士奇';
+        s1.getName();
+        s1.getColors();
+        console.log(s1.name);
+        console.log(s1.colors);
+    </script>
+</body>
+</html>

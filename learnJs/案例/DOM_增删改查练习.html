@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <input type="text" class="_input">
+        <button onclick="send()">发送</button>
+    </p>
+    <ul class="msg_li">
+
+    </ul>
+    <script>
+        function send() {
+            let input = document.querySelector('._input');
+            let v_input = input.value;
+
+            let ul = document.querySelector('.msg_li');
+
+            let li = document.createElement('li');
+            
+            let del_btn = document.createElement('button');
+
+            li.innerHTML = v_input;
+            del_btn.innerHTML ='删除';
+            del_btn.onclick = function (){
+                li.remove();
+            }
+            li.appendChild(del_btn);
+            ul.appendChild(li);
+            
+        }
+    </script>
+</body>
+</html>

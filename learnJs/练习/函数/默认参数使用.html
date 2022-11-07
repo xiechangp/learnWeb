@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* sort()排序 */
+        function sort(array, type = 'asc') {
+           return array.sort((a, b) => type == 'asc' ? a - b : b - a)
+        }
+        console.log(sort([1,5,7,3],'desc'));
+
+        /* filter */
+        let arr=[1,2,3,4,5,6];
+        function lessThan(arr){
+            return arr<=3;
+        }
+        console.log(arr.filter(lessThan));
+
+        let fil = arr.filter((elem)=>elem<=3)
+
+        console.log(fil);
+        /* setInterval */
+        let i = 0;
+        // setInterval(()=>console.log(i++),2000);
+        
+    </script>
+</body>
+
+</html>

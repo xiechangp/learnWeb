@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习盒子模型</title>
+    <style>
+        h2,ul,li,div,a,body{
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+        }
+        /* margin 外边距
+           border 边框
+           padding 内边距
+           border ：边框的粗细 边框的样式 边框的颜色
+        */
+        #box{
+            width: 300px;
+            height: 200px;
+            background: beige;
+            margin: 0 auto;
+            /* border: 粗细 线的类型 颜色 */
+            border: 1px solid red;
+        }
+        body div>h2{
+            color: red;
+            margin: 40px 0px 0px 0px;
+            text-align: center;
+            background-color: aquamarine;
+            
+        }
+        form{
+            background-color: blueviolet;
+            border: 2px solid rgb(41, 219, 28);  
+            /* margin: 20px 0px; */
+            padding: 10px 10px;
+        }
+        div:nth-of-type(1) input{
+            border: 3px dashed red;
+            margin-bottom: 10px;
+        }
+        div:nth-of-type(2) input{
+            margin: 0px 0px 0px 16px;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div>
+            <h2>会员登录</h2>
+        </div>
+        <form action="" method="get">
+            <div>
+                <span>用户名：</span>
+                <input type="text" >
+            </div>
+            <div>
+                <span>密码：</span>
+                <input type="password" >
+            </div>
+        </form>
+    </div>
+</body>
+</html>

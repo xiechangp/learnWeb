@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>我是 div 内本身的 p标签</p>
+        <span>我是 div 内本身的 span标签</span>
+        <p>我是 div 内本身的 p标签</p>
+    </div>
+    
+    <script>
+        // 创建一个 i 标签
+        var i = document.createElement('i');
+        //向 i 标签内添加一些文本
+        i.innerText = 'createElement i 标签';
+
+        // 获取到 div 元素
+        var div = document.querySelector('div');
+        // 获取到 span 元素
+        var span = document.querySelector('span');
+        // 使用创建的 i 标签去替换 div 内本身的 span 标签
+        div.replaceChild(i,span);
+    </script>
+</body>
+</html>

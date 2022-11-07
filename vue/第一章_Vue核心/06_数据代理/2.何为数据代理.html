@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 数据代理：通过一个对象代理对另一个对象中属性的操作(读/写) */
+        let obj = {
+                x: 100
+            },
+            obj2 = {
+                y: 200
+            };
+        Object.defineProperty(obj2, "x", {
+            get() {
+                return obj.x;
+            },
+            set(value) {
+                obj.x = value;
+            }
+        })
+
+
+          let vm = {
+            _data: {
+                name: "Jack",
+                age: 18
+            }
+        }
+ 
+       Object.defineProperty(vm, "name", {
+            get() {
+                return vm._data.name;
+            },
+            set(value) {
+                return vm._data.name = value;
+            }
+        });
+       Object.defineProperty(vm,"age",{
+            get(){
+                return vm._data.age;
+            },
+            set(value){
+                return vm._data.age = value;
+            }
+        })
+        console.log(vm);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* id选择器 ：id必须是全局唯一的
+            #id名称{}
+            优先级：
+            不遵循就近原则，固定的
+            id>class>标签选择器
+        */
+        h1{
+            color: aqua;
+        }
+        #hello1{
+            color: green;
+        }
+        .hello1{
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="hello1" class="hello1">Hello 1</h1>
+    <h1 >Hello 2</h1>
+    <h1 class="hello1">Hello 3</h1>
+</body>
+</html>

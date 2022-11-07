@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            background-color: antiquewhite;
+            border: 1px solid black;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+    <script>
+        //  for(let i=1;i<10;i++){
+        //     for(let j=1;j<i+1;j++){
+        //        document.write( j+'*'+i+'='+i*j+' ')
+        //     }  
+        //     document.write('<br>')
+        // }
+        let srt = " ";
+        for(let i=1;i<10;i++){
+            let srt = " ";
+            for(let j=1;j<i+1;j++){
+               srt += j+'*'+i+'='+i*j+' ';
+            }  
+            console.log(srt)
+        }
+    </script>
+
+
+    <script>
+        /* function multiplicationTable(){
+            for(let i=1;i<10;i++){
+                for(let j=1;j<=i;j++){
+                    document.write('<div>'+j+' x '+i+'='+i*j+'  '+'</div>');
+                }
+                document.write('<br>');
+            }
+        } */
+        没有参数必须加上括号
+       /*  multiplicationTable = () =>{
+            for(let i=1;i<10;i++){
+                for(let j=1;j<=i;j++){
+                    document.write('<div>'+j+' x '+i+'='+i*j+'  '+'</div>');
+                }
+                document.write('<br>');
+            }
+        } */
+        一个参数可不加
+      /*   multiplicationTable = n =>{
+            for(let i=1;i<n;i++){
+                for(let j=1;j<=i;j++){
+                    document.write('<div>'+j+' x '+i+'='+i*j+'  '+'</div>');
+                }
+                document.write('<br>');
+            }
+        } */
+        multiplicationTable(10);
+        花括号表示开始一个多行函数
+         multiplicationTable = (n) =>{
+            for(let i=1;i<n;i++){
+                for(let j=1;j<=i;j++){
+                    document.write('<div>'+j+' x '+i+'='+i*j+'  '+'</div>');
+                }
+                document.write('<br>');
+            }
+        }
+        multiplicationTable(11);
+    </script>
+</body>
+</html>

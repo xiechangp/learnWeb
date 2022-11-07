@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 700px;
+            height: 100px;
+            /* padding: 10px; */
+            /* background-color: aquamarine; */
+            /* border: 1px  solid; */
+            margin: 200px auto;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            /* justify-items: center; */
+            align-items: center;
+            list-style: none;
+
+        }
+
+        li {
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+            font-size: 20px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        /*      // 事件委托
+        // 1. 获取到 ul 元素
+        var ul = document.querySelector('ul');
+        // 2. 给 ul 绑定点击事件
+        ul.onclick = function(e){
+            // 3. 通过事件目标判断你点击的是 li
+            if (e.target.tagName === 'li'){
+                console.log('你点击的是 li')
+            }
+        } */
+
+        let box = document.querySelector('ul');
+        // 事件委托
+        box.onmouseover = function (e) {
+            console.log(e);
+            let target = e.target || e.scrElement;
+            target.style.backgroundColor = '#fb7299';
+            
+        }
+        box.onmouseout = function (e) {
+            let target = e.target || e.scrElement;
+            target.style.backgroundColor = 'antiquewhite';
+        }
+        // 未来添加的
+        setTimeout(() => {
+            let li = document.createElement('li');
+            li.innerHTML = '4';
+            box.appendChild(li);
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 5. 判断一个给定的字符串是否是同构的
+    输入: s = "egg", t = "add" 输出: true 输入: s = "foo", t = "bar" 输出: false -->
+
+    <script>
+        let s = prompt('输入第一个：');
+        let t = prompt('输入第二个：');
+        let objs = {},
+            objt = {};
+        function st(s,t) {
+            for (let i = 0; i < s.length; i++) {
+                if (objs[s[i]] !== objt[t[i]]) {
+                   return false;
+                }
+                objs[s[i]] = i+1;
+                objt[t[i]] = i+1;
+            }
+            return true;
+        }
+        console.log(st(s,t));
+    </script>
+</body>
+
+</html>

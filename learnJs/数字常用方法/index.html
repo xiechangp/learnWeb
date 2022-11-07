@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //随机数  取整 向下取整
+        var r1 = Math.random();
+        var r2 = r1*11;
+        // var res = Math.round(r2);
+        // console.log(res);
+
+        var res = Math.floor(r2);
+        console.log(res);
+
+       var res =  randomNum(8,10);
+        //范围内的随机整数
+        function randomNum(min,max){
+            var res = Math.floor(Math.random()*(max - min + 1));
+            var res2 = res + min
+            return res2;
+        }
+        console.log(res);
+    </script>
+</body>
+</html>

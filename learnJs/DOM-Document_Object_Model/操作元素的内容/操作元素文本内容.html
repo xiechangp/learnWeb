@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>操作内容</button>
+    <div>
+        <p>文本内容</p>
+    </div>
+    <script>
+        //获取元素
+        var ele = document.querySelector('div');
+        var btn = document.querySelector('button');
+
+        //获取元素的文本内容
+        console.log(ele.innerText);
+        //给 按钮 绑定点击事件
+        btn.onclick = function(){
+            //设置div内的文本内容
+            ele.innerText = '奥特曼';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正反选</title>
+</head>
+
+<body>
+    <form method="post" action="">
+        你爱好的运动是？<input type="checkbox" id="checkedAllBox">全选/全不选
+        <br>
+        <input type="checkbox" name="items" value="足球">足球
+        <input type="checkbox" name="items" value="篮球">篮球
+        <input type="checkbox" name="items" value="羽毛球">羽毛球
+        <input type="checkbox" name="items" value="乒乓球">乒乓球
+        <br>
+        <input type="button" id="checkedAllBtn" value="全　选">
+        <input type="button" id="checkedNoBtn" value="全不选">
+        <input type="button" id="checkedRevBtn" value="反　选">
+        <input type="button" id="sendBtn" value="提　交">
+    </form>
+    <script src="/JQuery/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            //全选
+            let checkbox = $('[name=items]');
+            let box = $('#checkedAllBox');
+            box.click(function () {
+                // console.log(this);
+                // console.log(this);
+                // let type = this.checked;
+                for (const item of checkbox) {
+                    // console.log(item);
+                    item.checked = box[0].checked;
+                }
+            })
+            // 单选按钮
+            checkbox.click(function () {
+                aboutSelectingAll();
+            })
+            //全选
+            $('#checkedAllBtn').click(function () {
+                for (const item of checkbox) {
+                    item.checked = true;
+                    box[0].checked = true;
+                }
+            })
+            //全不选
+            $('#checkedNoBtn').click(function () {
+                for (const item of checkbox) {
+                    item.checked = false;
+                    box[0].checked = false;
+                }
+            })
+            //反选
+            $('#checkedRevBtn').click(function () {
+                for (let i = 0; i < checkbox.length; i++) {
+                    checkbox[i].checked = !checkbox[i].checked;
+                }
+                aboutSelectingAll();
+            })
+            // 提交
+            $('#sendBtn').click(function () {
+                let arr = new Array();
+                for (let i = 0; i < checkbox.length; i++) {
+                    if (checkbox[i].checked === true) {
+                        arr[i] = checkbox[i].value;
+                    }
+                    // console.log(arr.length);
+                }
+                console.log(arr.length);
+                if (arr.length <= 0) {
+                    alert('再见');
+                    return;
+                }
+                arr.forEach(item => {
+                    alert(item);
+                });
+            })
+            //点亮全框
+            function aboutSelectingAll() {
+                let flag = true;
+                for (let j = 0; j < checkbox.length; j++) {
+                    if (checkbox[j].checked === false) {
+                        flag = false;
+                        break;
+                    }   
+                }
+                // console.log(flag);
+                box[0].checked = flag
+            }
+        })
+    </script>
+</body>
+
+</html>

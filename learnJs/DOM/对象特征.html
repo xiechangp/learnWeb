@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hd">houdunren.com</div>
+<script>
+  let hd = document.getElementById('hd')
+
+  Object.assign(hd, {
+    //设置标签内容
+    innerHTML: '向军大',
+   color: 'red',
+    change() {
+      this.innerHTML = '后盾人'
+      this.style.color = this.color
+    },
+    onclick() {
+      this.change()
+    },
+  })
+</script>
+</body>
+</html>

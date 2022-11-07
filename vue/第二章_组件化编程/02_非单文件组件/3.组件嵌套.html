@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+
+<body>
+
+    <div id="root">
+        
+    </div>
+
+    <script>
+        // 定义一个 student 组件 （嵌套在school组件中）
+        const student = Vue.extend({
+            template: `
+            <div>
+            <h1>学生信息</h1>
+            <h3>学生姓名：{{stuName}}</h3>
+            <h3>学生年龄：{{stuAge}}</h3>
+            </div>
+            `,
+            data() {
+                return {
+                    stuName: "Jack",
+                    stuAge: 18
+                }
+            },
+        });
+        // 创建一个 school 组件
+        const school = Vue.extend({
+            template: `
+            <div>
+            <h1>学校信息</h1>
+            <h3>学校名称：{{schoolName}}</h3>
+            <h3>学校名称：{{schoolAddress}}</h3>
+            <student></student>
+            </div>
+            `,
+            data() {
+                return {
+                    schoolName: "河池学院",
+                    schoolAddress: "河池"
+                }
+            },
+            // 注册 （嵌套组件）student 组件
+            components: {
+                student
+            }
+        });
+
+        const hello = Vue.extend({
+            template: `<div><h1>欢迎来到{{msg}}<h1></div>`,
+            data() {
+                return {
+                    msg: "河池学院"
+                }
+            },
+        });
+
+        // 定义一个 app 组件
+        const app = Vue.extend({
+            template: `
+                <div>
+                    <hello></hello>
+                    <school></school>
+                </div>
+            `,
+            // 注册 hello与school 组件
+            components: {
+                hello,
+                school
+            }
+        });
+
+
+        new Vue({
+            template:`<app></app>`,
+            el: "#root",
+            // 注册组件
+            components: {
+                app
+            }
+        })
+    </script>
+</body>
+
+</html>

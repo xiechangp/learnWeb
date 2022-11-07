@@ -1,0 +1,11 @@
+<h1>houdunren.com</h1>
+<h1>houdunwang.com</h1>
+<script>
+    let nodes = document.querySelectorAll('h1');
+    [...nodes].map((item,keys)=>{
+        // console.log(keys);
+        item.addEventListener('click',function(){
+            this.style.textTransform = 'uppercase';
+        })
+    })
+</script>

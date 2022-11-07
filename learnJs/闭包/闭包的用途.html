@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 闭包实现计时器
+       /*  function fn1() {
+            let start = 0;
+            function fn2() {
+                return start++;
+            }
+            return fn2;
+        } */
+        function fn1() {
+            let start = 0;
+          return  function() {
+                return start++;
+            }
+        }
+        console.log(fn1()());
+        console.log(fn1()()); //调用完会被释放掉
+        let timer = fn1(); //timer 不会被释放 所以start值会始终存在内存中
+        for (let i = 0; i < 5; i++) {
+            console.log(timer());
+        }
+        timer = null; //释放 timer
+        // console.log(timer);
+
+        // 2. 闭包能够封装对象的私有属性和方法
+        function Person(name) {
+            let age;
+            function setAge(n) {
+                age = n;
+            }
+            function getAge() {
+                return age;
+            }
+            return {
+                name:name,
+                setAge:setAge,
+                getAge:getAge,
+            }
+        }
+        let p1 = Person('xcp');
+        p1.setAge(18);
+        console.log('-------------');
+        console.log(p1.name);
+        console.log(p1.getAge());
+        p1 = null;
+    </script>
+</body>
+</html>

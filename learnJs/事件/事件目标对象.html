@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // target srcElement 返回的是实际的事件目标
+        // currentTarget 回返监听函数所绑定的结点
+        let box = document.querySelector('.box');
+        box.onclick = function(e){
+            // 浏览器兼容设置
+            // let target = e.target || e.srcElement;
+            e.target.style.backgroundColor = 'red';
+        }
+        box.onmouseout = function(e){
+            let target = e.target || e.srcElement;
+            // target.style.backgroundColor = 'lightgray';
+        }
+    </script>
+</body>
+</html>

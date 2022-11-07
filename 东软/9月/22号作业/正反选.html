@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="zh">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+    </head>
+
+    <body>
+        <form method="post" action="">
+            你爱好的运动是？<input type="checkbox" id="checkedAllBox">全选/全不选
+
+            <br>
+            <input type="checkbox" name="items" value="足球">足球
+            <input type="checkbox" name="items" value="篮球">篮球
+            <input type="checkbox" name="items" value="羽毛球">羽毛球
+            <input type="checkbox" name="items" value="乒乓球">乒乓球
+            <br>
+            <input type="button" id="checkedAllBtn" value="全　选">
+            <input type="button" id="checkedNoBtn" value="全不选">
+            <input type="button" id="checkedRevBtn" value="反　选">
+            <input type="button" id="sendBtn" value="提　交">
+        </form>
+    </body>
+    <script>
+        let box = document.querySelector("#checkedAllBox");
+        let checkbox = document.querySelectorAll('[type=checkbox]:nth-child(n+3)');
+        // 全选/全部选
+        box.onclick = function () {
+            // console.log(this.checked); 
+            let type = this.checked
+            checkbox.forEach(item => {
+                // console.log(item);
+                item.checked = type;
+            });
+        }
+        for (let i = 0; i < checkbox.length; i++) {
+            checkbox[i].onclick = function () {
+                aboutSelectingAll();
+                /* let flag = true;
+                for (let j = 0; j < checkbox.length; j++) {
+                    if (checkbox[j].checked === false) {
+                        flag = false;
+                        break;
+                    }
+
+                }
+                // console.log(flag);
+                box.checked = flag */
+            }
+        }
+        // 全选
+        let selectAll = document.querySelector('#checkedAllBtn');
+        selectAll.onclick = function () {
+            checkbox.forEach(item => {
+                // console.log(item);
+                item.checked = true;
+                box.checked = true;
+            });
+        }
+        // 全不选
+        let notSelectAll = document.querySelector('#checkedNoBtn');
+        notSelectAll.onclick = function () {
+            checkbox.forEach(item => {
+                // console.log(item);
+                item.checked = false;
+                box.checked = false;
+            });
+        }
+        // 反选
+        let reverseSelection = document.querySelector('#checkedRevBtn');
+        reverseSelection.onclick = function(){
+            /* checkbox.forEach(item => {
+                if(item.checked == false){
+                    item.checked=true;
+                    box.checked = true;
+                }else {
+                    item.checked = false;
+                    box.checked = false;
+                }
+
+            });  */
+            for (let i = 0; i < checkbox.length; i++) {
+                checkbox[i].checked = !checkbox[i].checked;   
+            }
+            aboutSelectingAll();
+        }
+
+        //提交
+        let sbt = document.querySelector('#sendBtn');
+        sbt.onclick = function(){
+            let count=0;
+            for (const items of checkbox) {
+                if(items.checked === true){
+                    alert(`小朋友你选择了：${items.value}`);
+                    count++;
+                }
+            }
+            if(count<=0){
+                alert('小伙子请勾选你最喜爱的运动！！！！');
+            }
+            console.log(count);
+        }
+
+        // 点亮全框
+        function aboutSelectingAll() {
+                let flag = true;
+                for (let j = 0; j < checkbox.length; j++) {
+                    if (checkbox[j].checked === false) {
+                        flag = false;
+                        break;
+                    }
+                }
+                // console.log(flag);
+                box.checked = flag
+            }
+    </script>
+
+    </html>
+</body>
+
+</html>

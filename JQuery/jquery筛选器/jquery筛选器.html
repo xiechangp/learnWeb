@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3
+            <p>
+                <i></i>
+            </p>
+        </li>
+        <li>4</li>
+        <li>5</li>
+        <span></span>
+        <li>6</li>
+        <li>7
+            <i></i>
+        </li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <script>
+        //筛选器
+        // first()
+        console.log($('li').first());
+        // last()
+        console.log($('li').last());
+        // eq(索引)
+        console.log($('li').eq(3));
+        // next()
+        console.log($('span').next());
+        // nextAll()
+        console.log($('span').nextAll());
+        // prev()
+        console.log($('span').prev());
+        // prevAll()
+        console.log($('span').prevAll());
+        // parent()
+        console.log($('span').parent());
+        // parents()
+        console.log($('span').parents());
+        // siblings() 拿到该元素的所有兄弟元素
+        console.log($('span').siblings());
+        // find(选择器)
+        console.log($('li').find('i'));
+    </script>
+</body>
+</html>

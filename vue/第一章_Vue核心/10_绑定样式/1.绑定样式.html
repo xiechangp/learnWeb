@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <style>
+        .box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+
+        .sid {
+            background-color: black;
+        }
+
+        .happy {
+            background-color: red;
+        }
+
+        .lucky {
+            background-color: darkorange;
+        }
+
+        * {
+            margin-top: 20px;
+        }
+
+        .style1{
+            border-radius: 20px;
+        }
+        .style2{
+            font-size: 30px;
+            font-weight: 100;
+            color: rgb(28, 229, 95);
+        }
+        .style3{
+            background: rgb(154, 23, 187);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+
+        <!-- class样式绑定--字符串写法  适用于类名不确定，需要动态绑定 -->
+        <div class="box" :class="mood">{{name}}</div>
+        <button @click="info">点击切换颜色</button>
+
+        <!-- class样式绑定--数组写法 适用于类名不确定，样式个数不确定 -->
+        <div class="box" :class="classArr">{{name}}</div>
+
+        <!-- class样式绑定--对象写法 适用于类名确定，样式确定，动态决定用或不用 -->
+        <div class="box" :class="classObj">{{name}}</div>
+        <!-- style样式绑定--对象写法  -->
+        <div class="box" :style="styleObj">{{name}}</div>
+        <!-- style样式绑定--数组写法  -->
+        <div class="box" :style="styleArr">{{name}}</div>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                name:"Jack",
+                mood: 'happy',
+                classArr:["style1","style2","style3"],
+                classObj:{
+                    style1:false,
+                    style2:false,
+                },
+                styleObj:{
+                    fontSize:"100px",
+                    color:"red"
+                },
+                styleArr:[
+                    {fontSize:"50px"},
+                    {color:"green"}
+                ]
+            },
+            methods: {
+                info() {
+                    // this.mood = 'lucky'
+                    arr = ["sid", "happy", "lucky"];
+                    let index = Math.floor(Math.random() * 3);
+                    this.mood = arr[index];
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

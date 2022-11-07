@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button>show</button>
+    <button>hide</button>
+    <button>toggle</button>
+    <button>stop</button>
+    <button>finish</button>
+    <div></div>
+    <script>
+        /* 1. show() 显示  2. hidt()隐藏 3. toggle切换
+         三者参数类型一样 show(时间,曲线,回调函数)
+         
+         1. stop()
+            调用 stop() 后 动画会停留在运动的过程中
+         
+        2. finish()
+            调用 finish() 后瞬间完成动画，去到动画方向的终点
+         
+         */
+        
+
+        // $('button:nth-child(1)').click(function(){
+        //     // 执行 show 动画函数
+        //     $('div').show(1000,'linear',function(){console.log('show触发')})
+        // })
+        // $('button:nth-child(2)').click(function(){
+        //     // 执行 show 动画函数
+        //     $('div').hide(1000)
+        // })
+        $('button:nth-child(3)').click(function(){
+            // 每一次触发的时候，都会把之前的动画停下来，然后执行本次最新的动画
+            $('div').stop().toggle(2000)
+        })
+        $('button:nth-child(4)').click(function(){
+            // 每一次触发的时候，都会把之前的动画停下来，然后执行本次最新的动画
+            $('div').finish().toggle(2000)
+        })
+        // $('button:nth-child(4)').click(function(){
+        //     // 执行 stop 停止动画
+        //     $('div').stop();
+        // })
+        $('button:nth-child(5)').click(function(){
+            // 执行 stop 停止动画
+            $('div').finish();
+        })
+
+
+    </script>
+</body>
+</html>

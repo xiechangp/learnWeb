@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var removeDuplicates = function (nums) {
+
+            return nums.reduce((arr, cur) => {
+                if (arr.includes(cur) === false) {
+                    arr.push(cur);
+                }
+                return arr;
+            }, [])
+
+        };
+        let arr = [1, 2, 1, 2];
+        console.log(removeDuplicates(arr))
+
+        // let phone = [{name:'苹果',price:3000},{name:'华为',price:5000},{name:'小米',price:2000}];
+
+        // function getNameByPrice(goods,price){
+        //    return goods.reduce((arr,cur)=>{
+        //         if(cur.price>price) arr.push(cur);
+        //         return arr;
+        //     },[]).map(item=>item.name)
+        // }
+        // console.table   (getNameByPrice(phone,2000));
+
+        /*  function priceMax(phone){
+        return phone.reduce((max,min)=>{
+            return max.price > min.price ?max:min
+        })
+    }
+    console.log(priceMax(phone));
+
+    function sum(phone){
+        return phone.reduce((total,cur)=>{
+           return  total=total+cur['price']; 
+        },0)
+    }
+    console.log(sum(phone))
+ */
+
+
+        /* let arr = [1, 2, 10, 1, 5] */
+
+        /* function arrayMax(arr){
+          return arr.reduce(function(min,max){
+                return max>min?max:min;
+            })
+        }
+        console.log(arrayMax(arr)); */
+
+        /*     arr.reduce(function (pre, value, index, arr) {
+            return console.log(pre, value);
+        }, )
+ */
+        /*   function arrayCount(array,item){
+              return array.reduce(function(total,cur){
+                  // total= total+item;
+              total+= (item == cur?1:0);
+              return total;
+              },0)
+          } */
+        //  console.log(arrayCount(arr,1)) 
+    </script>
+</body>
+
+</html>

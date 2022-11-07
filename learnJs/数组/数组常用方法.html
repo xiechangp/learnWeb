@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组常用方法</title>
+</head>
+<body>
+<!-- 
+    push() 从后面追加                                     join() 数组连接为字符串
+    pop() 从后面删除                                      concat() 拼接数组
+    unshift() 从前面添加                                  slice() 截取数组
+    shift() 从前面删除                                    indexOf() 查找数据在数组中的索引
+    reverse() 反转数组                                    forEach() 遍历数组
+    splice() 截取并添加                                   map() 映射数组          
+    sort()  数组排序                                      filter() 过滤数组
+ --以上则直接改变原始数组--                                everry() 判断是否全部满足条件的项
+                                                         some() 判断是否有满足条件的项
+                                                         --以上不改变原始数组--
+ -->
+
+    <script>
+        var arr = [ 100 , 200 , 300 ,400];
+        console.log(arr);
+        //执行 push 方法
+        var res = arr.push('追加的');
+        console.log(arr);
+        console.log(res);
+        //pop() 删除数组的 最后一个 数组 返回值 ：返回被删除的元素
+        console.log(arr.pop());
+        console.log(arr);
+        // unshift() 将数据添加到数组的最前面 返回值 ： 添加后数组 最新长度
+        var res = arr.unshift('unshift');
+        console.log(arr);
+        console.log(res);
+        // shift() 删除数组 最前一个 数据 返回值：被删的数据
+        var res = arr.shift();
+        console.log(arr);
+        console.log(res);
+        // reverse() 反转数组 返回值：被反转的数组
+        var res = arr.reverse();
+        console.log(arr);
+        console.log(res);
+        // splice() 
+        var arr = [ 100 , 200 , 300 ,400];
+        console.log(arr);
+        var res = arr.splice(0,3,1,2,3)
+        console.log(arr);
+        console.log(res);
+        // sort()排序
+        var arr = [2,4,1,5,7,0];
+        console.log(arr);
+        var res = arr.sort();
+        console.log(res);
+        var res = arr.sort(function (a,b){return a-b});
+        console.log(res);
+        var res = arr.sort(function (a,b){return b-a});
+        console.log(res);
+        // join() 连接符
+        var arr = [ 100, 200, 300, 400];
+        console.log(arr);
+        var res = arr.join('-');
+        console.log(res);
+        //concat() 拼接数组 原始数组不受影响
+        var arr = [ 100, 200, 300, 400];
+        console.log(arr);
+        var res = arr.concat([500,600])
+        console.log(arr);
+        console.log(res);
+        // slice() 截取数组  原始数组不受影响
+        var arr = [ 100, 200, 300, 400];
+        console.log(arr);
+        var res = arr.slice(1,4);
+        console.log(arr);
+        console.log(res);
+        // indexOf() 查找 数据 在数组中的 索引 位置 返回值：第一次出现的位置 如果没有返回-1
+        var arr = [ 100, 200, 300, 400];
+        console.log(arr);
+        console.log(arr.indexOf(200));
+        // forEach() 遍历数组 没有返回值
+        arr.forEach( function (item, index, arr){
+            console.log(item);
+            console.log(index);
+            console.log(arr);
+            console.log('--------------------');
+        }) ;
+        // map() 映射数组
+       var res =  arr.map( function( item, index, arr){
+            return item*10;
+        })
+        console.log(res);
+        // filter() 过滤数组
+        var res =  arr.filter( function( item, index, arr){
+            return item>10;
+        })
+        console.log(res);
+        // every() 判断数组中所有元素是否满足条件 返回值布尔值
+        var res =  arr.every( function( item, index, arr){
+            return item>150;
+        })
+        console.log(res);
+        // some() 判断数组中某一项是否满足条件 返回值 true false
+        var res =  arr.some( function( item, index, arr){
+            return item>150;
+        })
+        console.log(res);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text{
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <p class="name">
+            <label for="username">用户名:</label>
+            <input type="text"  name="user" id="username">
+        </p>
+        <p class="pwd">
+            <label for="pwd">密码:</label>
+            <input type="" name="pwd" id="pwd">
+        </p>
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        let user = document.querySelector('#username');
+        let span = document.createElement('span');
+        span.innerHTML = '请输入用户名';
+        // focus 聚焦事件
+        user.onfocus = function(){
+            // this.className = 'inputbro'
+            this.setAttribute('style',' border: 2px solid orange;')
+            this.parentNode.appendChild(span);
+            span.setAttribute('class','text');
+            
+        }
+        //  blur 失焦
+        user.onblur = function(){
+            span.style.display = 'none'
+            this.setAttribute('style','')
+        }
+    </script>
+</body>
+</html>

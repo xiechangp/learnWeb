@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            /* display: none; */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/东软/9月/22号作业/img/ik.gif" alt="">
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script>
+        document.onmousemove = function (e) {
+            $('img').mousedown(function(){
+            let x = e.clientX;
+            let y = e.clientY;
+            $(this).css({
+                left:x,
+                top:y,
+                
+            })  
+        })
+        }
+       $('img').mouseup(function(){
+           //.....
+        //    $(this).css('display','none');
+       })
+
+
+
+        // document.onmousemove = function (e) {
+        //     console.log(e);
+        //     let x = e.clientX;
+        //     let y = e.clientY;
+        //     console.log(x, y);
+        //     img.style.left = x + 'px';
+        //     img.style.top = y + 'px';
+        //     img.style.display = 'block'
+        // }
+      /*   document.onmouseout = function (e) {
+
+            img.style.display = 'none'
+        } */
+    </script>
+</body>
+
+</html>

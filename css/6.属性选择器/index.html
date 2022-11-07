@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性选择器</title>
+    <style>
+        /* 后代选择器 */
+        .demo a{
+            float:left;  /* 向左浮动 */
+            display: block;
+            height: 50px;
+            width: 50px;
+            border-radius: 10px;  /* 圆角边框 */
+            background-color: rgb(55, 185, 94);
+            text-align: center;  /* 文字居中 */
+            color: cornsilk;
+            text-decoration: none; /* 去下划线 */
+            margin-right: 5px;  /* 外边框距离5px */
+            font:bold 20px/50px Arial; /* bold粗体 20px是大小50px是行高 要写个元素 */
+        }
+        /* 
+        属性名，属性名 = 属性值(正则)  id+class的结合体
+        = 绝对等于
+        *= 属性值全选   a[class *="links"]
+        ^= 以什么开头  a[href^=http]
+        $= 以什么结尾  
+        */
+        /* 存在id属性的元素   a[]{}*/
+        a[id]{
+            background-color: burlywood;
+        }
+        a[id=first2]{
+            background-color: aqua;
+        }
+        /* class 中有links的元素 */
+        a[class="links item first"]{
+            background-color: rgb(214, 195, 170);
+        }
+        a[class *="links"]{
+            background-color: rgb(214, 195, 170);
+        }
+        /* 选中href中以http开头的元素 */
+        a[href^=http]{
+            background-color: blue ;
+        }
+        /* 选中href中以pdf结尾的元素 */
+        a[href$=pdf]{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <p class="demo">
+        <a href="http://www.baidu.com" class="links item first" id="first" target="_blank">a1</a>
+        <a href="http://www.baidu.com" class="links item first" target="_blank" title="test">a2</a>
+        <a href="../img/dog.jpg" class="links item">a3</a>
+        <a href="../img/js1.png" class="links item">a4</a>
+        <a href="../img/js3.jpeg" class="links item">a5</a>
+        <a href="abc" class="links item">a6</a>
+        <a href="/a.pdf" class="links item">a7</a>
+        <a href="/abc.pdf" class="links item">a8</a>
+        <a href="abc.doc" class="links item" id="first2">a9</a>
+        <a href="abcd.doc" class="links item last">a10</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 20px solid #333;
+            margin: 20px;
+            padding: 20px;
+            background-color: bisque;
+            background-clip: border-box;
+
+            /* display: none;1. 不管该元素是否隐藏，都能获取到元素的值 */
+            box-sizing: border-box;
+            /* 2. 不管盒子模型是什么状态，拿到的尺寸区域不变 值会有所变化 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        /*
+            1. 不管该元素是否隐藏，都能获取到元素的值
+            2. 不管盒子模型是什么状态，拿到的尺寸区域不变 值会有所变化
+        */
+        //获取元素的尺寸
+        // width() height() 获取内容的宽与高
+        console.log($('.box').width());
+        console.log($('.box').height());
+        console.log('------------------')
+        // innerWidth() innerHeight() + padding
+        console.log($('.box').innerHeight());
+        console.log($('.box').innerWidth());
+        console.log('------------------')
+        // outerWidth() outerHeight() + padding + border
+        console.log($('.box').outerHeight());
+        console.log($('.box').outerWidth());
+        console.log('------------------')
+        // outerWidth(true) outerHeight(true) + padding + border + margin
+        console.log($('.box').outerWidth(true));
+        console.log($('.box').outerWidth(true));
+    </script>
+</body>
+
+</html>

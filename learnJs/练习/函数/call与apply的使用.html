@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.找出数组的最大元素 Math.max() apply(null,)
+        let max = Math.max(2, 3, 5, 6, 9);
+        let arr = [1, 20, 100, 88];
+        console.log(max);
+        let arrMax = Math.max.apply(null, arr);
+        let arrMin = Math.min.apply(null, arr);
+        console.log(arrMax);
+        console.log(arrMin);
+
+        // 2.将类数组转换成真正的数组
+        function add() {
+            let arrNew = Array.prototype.slice.apply(arguments);
+            console.log(arrNew);
+        }
+        add(1, 2, 3, 4)
+
+        function add2(...arr) {
+            console.log('-----------------');
+            arr.push(8)
+            console.log(arr);
+        }
+        add2(1, 2, 3, 4, 5);
+
+        // 数组追加
+        console.log('------------------');
+        let arr3 = [];
+        Array.prototype.push.apply(arr3,[1,2,3,4,5]);
+        Array.prototype.push.apply(arr3,[1,2,3,4,5]);
+        console.log(arr3);
+
+        // 利用call和apply做继承
+        function Animal(name,age){
+            this.name = name;
+            this.age = age;
+            this.sayName = function(){
+                console.log(`${this.name}`);
+            }
+        }
+        function Cat(name,age){
+            // Animal.call(this,name,age);
+            Animal.apply(this,[name,age]);
+        }
+        let cat = new Cat('大狗',20);
+        cat.sayName();
+
+        // 使用log代理console.log()
+        function log(){
+            console.log.apply(console,arguments);
+        }
+        log(cat.name);
+    </script>
+</body>
+
+</html>

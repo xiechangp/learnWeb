@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body {
+            width: 950px;
+            margin: auto;
+        }
+        .top {
+            width: 950px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+
+        .left {
+            width: 230px;
+            height: 400px;
+            background-color: darkgrey;
+            display: inline-block;
+            /* position:absolute; */
+            margin: 5px 0px;
+        }
+
+        .center {
+            width: 470px;
+            height: 400px;
+            background-color: rgb(199, 24, 24);
+            display: inline-block;
+            margin: 5px;
+            /* position: relative; */
+            /* left: 235px; */
+            z-index: 999;
+        }
+
+        .right {
+            width: 230px;
+            height: 400px;
+            background-color: darkgrey;
+            display: inline-block;
+            /* position: absolute; */
+            /* position: absolute; */
+            left: 240px;
+            margin: 5px 0px;
+
+        }
+
+        .footer {
+            width: 950px;
+            height: 80px;
+            background-color: darkgrey;
+            display: flex;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <div class="top"></div>
+        <div class="left"></div>
+        <div class="center"> </div>
+        <div class="right"></div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>

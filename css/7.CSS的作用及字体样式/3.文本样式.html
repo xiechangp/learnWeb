@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.文本样式</title>
+    <!-- 
+        1、颜色 2、文本对齐的方式 3、首行缩进 4、行高 5、装饰 6、文本水平对齐
+     -->
+    <!-- 
+        颜色：单词、RGB、RGBA A：0~1
+        text-align：排版
+        text-indent:段落首行缩进  em 2em(表示缩进两个字)
+        height:行高
+        line-height：块高
+        vertical-align:middle 文本图片水平对齐
+     -->
+     <style>
+          h1{
+             text-align: center;/* 字体居中 */
+         }
+         h1>span{
+             /* color:rgba(20, 158, 222, 0.8);字体颜色 */
+             /* color: #00FF00; */
+             color:rgb(235,23, 88);
+         }
+         .p1{
+            text-indent: 2em;/* 段落首行缩进 */
+         }
+         .p2{
+            text-indent: 2em;
+            letter-spacing:2px; /* 指定字符之间的空间 */
+            line-height: 200%;/*指定行与行之间的空间  */
+         }
+         .p3{
+             background: goldenrod;
+             border-radius: 12px;
+             width: 877px;
+             height: 100px; /* 行高 */
+             line-height: 100px;  /* 行高和块的高度一致，就可以上下居中 */
+             
+         }
+         .l1{
+             text-decoration: underline; /* 下划线 */
+         }
+         .l2{
+             text-decoration: line-through;/* 中划线 */
+         }
+         .l3{
+             text-decoration: overline;/* 下划线 */
+         }
+         img,span{
+            vertical-align: middle; /* 文本图片水平对齐 */
+         }
+         /* 超链接去下划线 */
+         a:hover{
+             color: rgb(204, 230, 55);
+             border-radius: 15px;
+         }
+         a{
+             text-decoration: none;
+         }
+     </style>
+</head>
+<body>
+    <h1><img src="/images/dog.jpg" alt="" width="40px" title="在线观看" > <a href="https://v.qq.com/x/cover/ba4l99vukuzjanj.html?ptag=10520" target="_blank"> <span id="span1">魁拔</span></a>（2011年王川导演大陆TV动画)</h1>
+    <p class="p1"> 《魁拔》是2008年北京青青树动漫科技有限公司以系列动画电影的第一部《魁拔之十万火急》为基础，重新剪辑而成的TV动画。由王川执导，田博、马华等编剧，刘婧荦，竹内顺子等配音。</p>
+
+    <p class="p2">TV版完整保留了电影的世界观、人物设定、故事内容和情节主线，但重制了片头曲。《魁拔妖侠传》是魁拔系列电影的前传，主要讲述的是有关卡拉肖克潘家族的故事，与电影关系并不大。大家所说的魁拔通常指魁拔系列动画电影。</p>
+
+    <p class="p3">If you find a path with no obstacles, it probably doesn’t lead anywhere.  太容易的路,可能根本就不能带你去任何地方.</p>
+    <p class="l1">Hello</p>
+    <p class="l2">Hello</p>
+    <p class="l3">Hello</p>
+</body>
+</html>

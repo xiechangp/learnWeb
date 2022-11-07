@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.超链接伪类</title>
+    <style>
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        /* 当鼠标悬浮停在链接上 */
+        a:hover{
+            color: rgb(22, 80, 174);
+            font-size: 30px;
+        }
+        /* 点击当前的链接 */
+        a:active{
+            color: green;
+        }
+        /* 为访问的链接 */
+        /* a:link{
+            color:antiquewhite;
+        } */
+        /* 被选择的链接 */
+        /* a:visited{
+            color: royalblue;
+        } */
+        #price{
+            font-size: 30px;
+            font-weight: bold;
+            text-shadow:  2px 2px red;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">
+        <img src="../images/book1.jpg" alt="">
+    </a>
+    <p>
+        <a href="#">码出高效：Java开发手册</a>
+    </p>
+    <p>
+        <a href="#">作者：孤尽老师</a>
+    </p>
+    <p >
+        售价：<span id="price">$99元</span>
+    </p>
+</body>
+</html>

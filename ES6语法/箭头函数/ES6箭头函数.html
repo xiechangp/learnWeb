@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //js语法
+        var fun = function(){console.log('hello world')}
+        fun();
+        //ES6
+        var fun = () => {console.log('hello ES6')}
+        fun();
+
+        /*
+            箭头函数的特殊之处
+
+            1.箭头函数某些时候可以省略 ()
+            => 当你的形参只有一个的时候,可以不写()
+
+            2.箭头函数某些时候可以省略{}
+            =>当你的代码只有一句话的时候,可以不写{}
+            =>并且会自动把这一句话的结果当做函数的返回值
+
+            3. 箭头函数内没有 arguments
+
+            4. 箭头函数内没有 this
+            => 箭头函数内的 this 就是外部作用域的 this
+        */
+       // 1.
+        var fn1 = () =>{console.log('我没有形参')}
+        fn1();
+        var fn2 = a =>{console.log('我有一个形参,值是:  ',a)}
+        fn2(1000);
+
+        // 2.
+        var fn3 = (a,b) => a+b;
+        console.log(fn3(100,4));
+
+        // 3.
+        // var fn4 = () =>{
+        //     console.log(arguments);
+        // }
+        // fn4();
+        var fn5 = function(){
+            console.log(arguments);
+        }
+        fn5();
+
+        // 4.
+        var obj = {
+            fn : function (){console.log(this)},
+            fn2: () => {console.log(this)}
+        }
+        obj.fn()// this 因为 fn函数被obj调用 ,所以this是obj
+        obj.fn2() //因为是箭头函数,内部没有 this 就是外部作用域的 this
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue模板</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+
+<body>
+<!-- 
+    1.M:模型(Model):对应data中的数据
+    2.V:视图(View):模板
+    3.VM:视图模型ViewModel:vue实例对象 
+-->
+    <div id="root">
+        <h1>学校名称：{{name}}</h1>
+        <h1>学校地址：{{address}}</h1>
+    </div>
+
+
+    <script>
+      let vm =  new Vue({
+            el: "#root",
+            data() {
+                return {
+                    name: "高级中学",
+                    address: "广州"
+                }
+            }
+        })
+        console.log(vm);
+    </script>
+</body>
+
+</html>

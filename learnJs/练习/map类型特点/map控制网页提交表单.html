@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="http://doc.houdunren.com" onsubmit="return post()">
+        <span>接受协议</span>
+        <input type="checkbox" name="" error="请接受协议">
+        <span>我是学生</span>
+        <input type="checkbox" name="" error="只对学生开放">
+        <input type="submit">
+    </form>
+<script>
+    function post(){
+        let error = document.querySelectorAll('[error]');
+        // console.log(error.getAttribute('error'))
+        let map = new Map();
+        error.forEach(item => {
+            map.set(item,{
+                error:item.getAttribute('error'),
+                result:item.checked
+            })
+        });
+        // console.log(map);
+        return [...map].every(([elem,key])=>{
+            key.result || alert(key.error);
+            return key.result;
+        })
+        
+        return false;
+    }
+</script>
+</body>
+
+</html>

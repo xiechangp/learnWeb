@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+        <!-- 条件渲染 v-show -->
+        <!-- <h2 v-show="true">我考上了{{school}}</h2> -->
+        <!-- <h2 v-show="1 === 1">我考上了{{school}}</h2> -->
+        <!-- <h2 v-show="showTime">我考上了{{school}}</h2> -->
+
+        <h2>{{a}}</h2>
+        <button @click="a++">A++</button>
+
+        <h2 v-show="a === 1">a===1</h2>
+        <h2 v-show="a === 2">a===2</h2>
+        <h2 v-show="a === 3">a===3</h2>
+        <!-- 条件渲染 v-if -->
+        <h2 v-if="true">我考上了{{school}}</h2>
+
+         <!-- v-if条件渲染与template 显示多个标签 -->
+        <template v-if="3 > add">
+            <h2>CSS</h2>
+            <h2>HTML</h2>
+            <h2>JS</h2>
+        </template>
+        
+        <!-- v-if v-else-if v-else -->
+        <h2 v-if="fraction > 90">优秀</h2>
+        <h2 v-else-if="fraction > 80">良好</h2>
+        <h2 v-eles>及格</h2>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                a:0,
+                school: "地瓜",
+                showTime: true,
+                add:2,
+                fraction:80
+            }
+
+        })
+    </script>
+</body>
+
+</html>
